@@ -1,0 +1,424 @@
+/* ==========================================================================
+   1. RESET & GLOBAL STYLES
+   ========================================================================== */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+}
+
+body {
+  background-color: #f8fafc;
+  color: #c0a560;
+  line-height: 1.6;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+ul {
+  list-style: none;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+h1{
+    font-size:2.2rem;
+    font-weight: 1000;
+    color: #8a7a1e;
+}
+
+section {
+ font-size: 1.8rem;
+  font-weight: 1000;
+  color: #8a7a1e;
+}
+
+section h2 {
+  font-size: 2.25rem;
+  color: #1e3a8a;
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+/* ==========================================================================
+   2. BUTTONS & UI COMPONENTS
+   ========================================================================== */
+
+.btn-primary, .btn-secondary {
+  display: inline-block;
+  padding: 12px 24px;
+  font-size: 1rem;
+  font-weight: 600;
+  border-radius: 8px;
+  transition: all 0.3s ease;
+  border: none;
+  cursor: pointer;
+  text-align: center;
+}
+
+.btn-primary {
+  background-color: #8a681e;
+  color: #ffffff;
+}
+
+.btn-primary:hover {
+  background-color: #cc8822;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+}
+
+.btn-secondary {
+  background-color: #8f940d;
+  color: #ffffff;
+}
+
+.btn-secondary:hover {
+  background-color: #0f766e;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+}
+
+.badge {
+  display: inline-block;
+  padding: 4px 12px;
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  color: #1e3a8a;
+  background-color: #dbeafe;
+  border-radius: 50px;
+}
+
+/* ==========================================================================
+   3. NAVIGATION HEADER
+   ========================================================================== */
+
+.navbar {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  background-color: #ffffff;
+  border-bottom: 1px solid #e2e8f0;
+  box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+  padding: 16px 20px;
+}
+
+.navbar .logo a {
+  font-size: 1.8rem;
+  font-weight: 1000;
+  color: #8a7a1e;
+}
+
+.navbar .logo span {
+  color: #dfbf31;
+}
+
+.navbar nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: 32px;
+}
+
+.nav-links a {
+  font-weight: 500;
+  color: #1e293b;
+  transition: all 0.3s ease;
+}
+
+.nav-links a:hover {
+  color: #0d9488;
+}
+
+/* ==========================================================================
+   4. HERO SECTION
+   ========================================================================== */
+
+.hero {
+  text-align: center;
+  padding: 120px 20px 80px;
+}
+
+.hero-content {
+ font-size: 1.8rem;
+  font-weight: 1000;
+  color: #8a7a1e;
+}
+
+.hero h1 {
+    font-size: 4rem;
+    font-weight: 1000;
+    color: #a18928;
+  line-height: 1.2;
+  margin-bottom: 20px;
+}
+
+.hero p {
+  font-size: 1.25rem;
+  color: #64748b;
+  margin-bottom: 32px;
+}
+
+.hero-actions {
+  display: flex;
+  justify-content: center;
+  gap: 16px;
+}
+
+/* ==========================================================================
+   5. SERVICES SECTION
+   ========================================================================== */
+
+.services-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 24px;
+}
+
+.service-card {
+  background-color: #ffffff;
+  padding: 32px;
+  border-radius: 16px;
+  border: 1px solid #e2e8f0;
+  box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+  transition: all 0.3s ease;
+}
+
+.service-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+  border-color: #0d9488;
+}
+
+.service-card h3 {
+  font-size: 1.5rem;
+  color: #1e3a8a;
+  margin-bottom: 12px;
+}
+
+.service-card p {
+  color: #64748b;
+}
+
+/* ==========================================================================
+   6. TUTORS DIRECTORY & GRID
+   ========================================================================== */
+
+.filter-controls {
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+  margin-bottom: 40px;
+  flex-wrap: wrap;
+}
+
+.filter-btn {
+  padding: 8px 20px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  border: 1px solid #e2e8f0;
+  border-radius: 50px;
+  background-color: #ffffff;
+  color: #64748b;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.filter-btn:hover, .filter-btn.active {
+  background-color: #1e3a8a;
+  color: #ffffff;
+  border-color: #1e3a8a;
+}
+
+.tutors-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+  gap: 32px;
+}
+
+.tutor-card {
+  background-color: #ffffff;
+  border-radius: 16px;
+  border: 1px solid #e2e8f0;
+  box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  transition: all 0.3s ease;
+}
+
+.tutor-card:hover {
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+  transform: translateY(-4px);
+}
+
+.tutor-avatar {
+  width: 100%;
+  height: 220px;
+  background-color: #e2e8f0;
+  overflow: hidden;
+}
+
+.tutor-avatar img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: all 0.3s ease;
+}
+
+.tutor-card:hover .tutor-avatar img {
+  transform: scale(1.05);
+}
+
+.tutor-info {
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+}
+
+.tutor-info .badge {
+  align-self: flex-start;
+  margin-bottom: 12px;
+}
+
+.tutor-info h3 {
+  font-size: 1.25rem;
+  color: #1e293b;
+  margin-bottom: 4px;
+}
+
+.tutor-info .qualification {
+  font-size: 0.9rem;
+  color: #64748b;
+  margin-bottom: 16px;
+}
+
+.tutor-info .rate {
+  font-size: 1.1rem;
+  color: #1e293b;
+  margin-top: auto;
+  margin-bottom: 20px;
+}
+
+.tutor-info .rate strong {
+  font-size: 1.5rem;
+  color: #1e3a8a;
+}
+
+.tutor-info button {
+  width: 100%;
+}
+
+/* ==========================================================================
+   7. CONTACT / BOOKING FORM
+   ========================================================================== */
+
+.contact-section {
+  background-color: #ffffff;
+  border-radius: 16px;
+  border: 1px solid #e2e8f0;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+  margin-top: 40px;
+  margin-bottom: 80px;
+}
+
+.form-container {
+  max-width: 600px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.form-group label {
+  font-weight: 600;
+  font-size: 0.95rem;
+  color: #1e293b;
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+  width: 100%;
+  padding: 12px 16px;
+  font-size: 1rem;
+  font-family: inherit;
+  border: 1px solid #e2e8f0;
+  border-radius: 8px;
+  background-color: #f8fafc;
+  transition: all 0.3s ease;
+}
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+  outline: none;
+  border-color: #0d9488;
+  background-color: #ffffff;
+  box-shadow: 0 0 0 3px rgba(13, 148, 136, 0.2);
+}
+
+/* ==========================================================================
+   8. FOOTER
+   ========================================================================== */
+
+.footer {
+  background-color: #334577;
+  color: #ffffff;
+  text-align: center;
+  padding: 32px 20px;
+  margin-top: auto;
+}
+
+/* ==========================================================================
+   9. MEDIA QUERIES (RESPONSIVE LAYOUT)
+   ========================================================================== */
+
+@media (max-width: 768px) {
+  .hero h1 {
+    font-size: 2.25rem;
+  }
+
+  .hero p {
+    font-size: 1rem;
+  }
+
+  .hero-actions {
+    flex-direction: column;
+  }
+
+  .nav-links {
+    gap: 16px;
+  }
+
+  section {
+    padding: 60px 16px;
+  }
+
+  .tutors-grid {
+    grid-template-columns: 1fr;
+  }
+}

@@ -1,18 +1,131 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Excellence</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Excellence Tutor</title>
+  <meta name="description" content="Connect with expert tutors in STEM, Languages, and Humanities.">
+  <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-    <h1>Excellence Tutor</h1>
+
+  <!-- Navigation Header (Future Nav Component) -->
+  <header class="navbar">
+    <div class="logo">
+      <a href="#">Excellence<span>Tutor</span></a>
+    </div>
     <nav>
-        <ul>
-            <li><a href="index.html">Home</a></li>
-            <li><a href="#about-us">About</a></li>
-            <li><a href="#contact">Contact</a></li>
-        </ul>
+      <ul class="nav-links">
+        <li><a href="#about">About Us</a></li>
+        <li><a href="#services">Services</a></li>
+        <li><a href="#tutors">Find a Tutor</a></li>
+        <li><a href="#contact" class="btn-primary">Book Session</a></li>
+      </ul>
     </nav>
+  </header>
+
+  <main>
+    <!-- Hero Section -->
+    <section class="hero" id="hero">
+      <div class="hero-content">
+        <h1>Excellence tutorial </h1>
+        <p>lift up your kids to excellence.</p>
+        <div class="hero-actions">
+          <a href="#tutors" class="btn-primary">Find a Tutor</a>
+          <a href="#how-it-works" class="btn-secondary">How It Works</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Services / Subject Categories -->
+    <section class="services" id="services">
+      <h2>Subjects We Cover</h2>
+      <div class="services-grid">
+        <div class="service-card" data-category="stem">
+          <h3>STEM</h3>
+          <p>Mathematics, Physics, Chemistry, Computer Science</p>
+        </div>
+        <div class="service-card" data-category="humanities">
+          <h3>Humanities</h3>
+          <p>Literature, History, Philosophy, Social Studies</p>
+        </div>
+        <div class="service-card" data-category="test-prep">
+          <h3>Test Prep</h3>
+          <p>SAT, ACT, GRE, IELTS, University Entrance Exams</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Filterable Tutor Directory (Future API Data Target) -->
+    <section class="tutors-section" id="tutors">
+      <h2>Our Expert Tutors</h2>
+      
+      <!-- Filter Controls (Handled via JS now, State/API later) -->
+      <div class="filter-controls">
+        <button class="filter-btn active" data-filter="all">All</button>
+        <button class="filter-btn" data-filter="math">Math</button>
+        <button class="filter-btn" data-filter="science">Science</button>
+        <button class="filter-btn" data-filter="languages">Languages</button>
+      </div>
+
+      <!-- Container for Cards (Rendered statically or dynamically via JS) -->
+      <div class="tutors-grid" id="tutors-container">
+        <!-- Sample Tutor Card -->
+        <article class="tutor-card" data-tutor-id="1" data-subject="math">
+          <div class="tutor-avatar">
+            <img src="assets/images/tutor1.jpg" alt="Photo of Alex Johnson">
+          </div>
+          <div class="tutor-info">
+            <span class="badge">Math Specialist</span>
+            <h3>Alex Johnson</h3>
+            <p class="qualification">M.Sc. in Applied Mathematics</p>
+            <p class="rate"><strong>$35</strong> / hour</p>
+            <button class="btn-secondary book-btn" data-tutor-id="1">Book Consultation</button>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- Booking / Consultation Form (Future API Post Endpoint) -->
+    <section class="contact-section" id="contact">
+      <h2>Request a Tutor</h2>
+      <form id="booking-form" class="form-container">
+        <div class="form-group">
+          <label for="student-name">Full Name</label>
+          <input type="text" id="student-name" name="studentName" required placeholder="John Doe">
+        </div>
+
+        <div class="form-group">
+          <label for="student-email">Email Address</label>
+          <input type="email" id="student-email" name="studentEmail" required placeholder="john@example.com">
+        </div>
+
+        <div class="form-group">
+          <label for="subject-select">Subject Needed</label>
+          <select id="subject-select" name="subject" required>
+            <option value="">Select a Subject</option>
+            <option value="math">Mathematics</option>
+            <option value="physics">Physics</option>
+            <option value="computer-science">Computer Science</option>
+            <option value="english">English Literature</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label for="message">Additional Notes</label>
+          <textarea id="message" name="message" rows="4" placeholder="Tell us about your learning goals..."></textarea>
+        </div>
+
+        <button type="submit" class="btn-primary">Submit Request</button>
+      </form>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <p>&copy; 2026 Excellence Tutor. All rights reserved.</p>
+  </footer>
+
+  <script src="js/main.js"></script>
 </body>
-</html> 
+</html>
