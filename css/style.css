@@ -1,6 +1,5 @@
-/* ==========================================================================
-   1. RESET & GLOBAL STYLES
-   ========================================================================== */
+
+   // 1. RESET & GLOBAL STYLES
 
 * {
   margin: 0;
@@ -15,7 +14,7 @@ html {
 
 body {
   background-color: #f8fafc;
-  color: #c0a560;
+  color: #1e293b;
   line-height: 1.6;
 }
 
@@ -32,29 +31,22 @@ img {
   max-width: 100%;
   display: block;
 }
-h1{
-    font-size:2.2rem;
-    font-weight: 1000;
-    color: #8a7a1e;
-}
 
 section {
- font-size: 1.8rem;
-  font-weight: 1000;
-  color: #8a7a1e;
+  padding: 80px 20px;
+  max-width: 1200px;
+  margin: 0 auto;
 }
 
 section h2 {
   font-size: 2.25rem;
-  color: #1e3a8a;
+  color: #8a7d1e;
   text-align: center;
   margin-bottom: 40px;
 }
 
-/* ==========================================================================
-   2. BUTTONS & UI COMPONENTS
-   ========================================================================== */
-
+  // 2. BUTTONS & UI COMPONENTS
+ 
 .btn-primary, .btn-secondary {
   display: inline-block;
   padding: 12px 24px;
@@ -68,17 +60,17 @@ section h2 {
 }
 
 .btn-primary {
-  background-color: #8a681e;
+  background-color: #8a7d1e;
   color: #ffffff;
 }
 
 .btn-primary:hover {
-  background-color: #cc8822;
+  background-color: #c7cc2b;
   box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
 }
 
 .btn-secondary {
-  background-color: #8f940d;
+  background-color: #0d9488;
   color: #ffffff;
 }
 
@@ -98,10 +90,12 @@ section h2 {
   border-radius: 50px;
 }
 
-/* ==========================================================================
-   3. NAVIGATION HEADER
-   ========================================================================== */
-
+   //3. NAVIGATION HEADER
+   
+   /* #image{
+    width:5px;
+    height:5px;
+   } */
 .navbar {
   position: sticky;
   top: 0;
@@ -112,14 +106,13 @@ section h2 {
   padding: 16px 20px;
 }
 
-.navbar .logo a {
-  font-size: 1.8rem;
-  font-weight: 1000;
-  color: #8a7a1e;
+.navbar .logo #image {
+  width: 100px;
+  height:100px;
 }
 
 .navbar .logo span {
-  color: #dfbf31;
+  color: #d1c757;
 }
 
 .navbar nav {
@@ -146,9 +139,8 @@ section h2 {
   color: #0d9488;
 }
 
-/* ==========================================================================
-   4. HERO SECTION
-   ========================================================================== */
+  // 4. HERO SECTION
+   
 
 .hero {
   text-align: center;
@@ -156,15 +148,15 @@ section h2 {
 }
 
 .hero-content {
- font-size: 1.8rem;
-  font-weight: 1000;
-  color: #8a7a1e;
+
+  max-width: 1600px;
+  margin-left: 300px;
 }
 
 .hero h1 {
-    font-size: 4rem;
-    font-weight: 1000;
-    color: #a18928;
+  font-size: 3rem;
+  font-weight: 800;
+  color: #98772a;
   line-height: 1.2;
   margin-bottom: 20px;
 }
@@ -180,11 +172,8 @@ section h2 {
   justify-content: center;
   gap: 16px;
 }
-
-/* ==========================================================================
-   5. SERVICES SECTION
-   ========================================================================== */
-
+//5. SERVICES SECTION
+   
 .services-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
@@ -203,12 +192,12 @@ section h2 {
 .service-card:hover {
   transform: translateY(-4px);
   box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
-  border-color: #0d9488;
+  border-color: #94890d;
 }
 
 .service-card h3 {
   font-size: 1.5rem;
-  color: #1e3a8a;
+  color: #8a731e;
   margin-bottom: 12px;
 }
 
@@ -216,9 +205,8 @@ section h2 {
   color: #64748b;
 }
 
-/* ==========================================================================
-   6. TUTORS DIRECTORY & GRID
-   ========================================================================== */
+  // 6. TUTORS DIRECTORY & GRID
+   
 
 .filter-controls {
   display: flex;
@@ -381,21 +369,17 @@ section h2 {
   box-shadow: 0 0 0 3px rgba(13, 148, 136, 0.2);
 }
 
-/* ==========================================================================
-   8. FOOTER
-   ========================================================================== */
+   // 8. FOOTER
 
 .footer {
-  background-color: #334577;
+  background-color: #3c508d;
   color: #ffffff;
   text-align: center;
   padding: 32px 20px;
   margin-top: auto;
 }
 
-/* ==========================================================================
    9. MEDIA QUERIES (RESPONSIVE LAYOUT)
-   ========================================================================== */
 
 @media (max-width: 768px) {
   .hero h1 {

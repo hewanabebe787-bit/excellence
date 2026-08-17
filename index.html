@@ -7,25 +7,22 @@
   <meta name="description" content="Connect with expert tutors in STEM, Languages, and Humanities.">
   <link rel="stylesheet" href="css/style.css">
 </head>
-<body>
-
-  <!-- Navigation Header (Future Nav Component) -->
+<body> 
+  
   <header class="navbar">
     <div class="logo">
-      <a href="#">Excellence<span>Tutor</span></a>
+     <img id="image" src="logoex.jpg" alt="excellence tutor">
     </div>
     <nav>
       <ul class="nav-links">
         <li><a href="#about">About Us</a></li>
         <li><a href="#services">Services</a></li>
         <li><a href="#tutors">Find a Tutor</a></li>
-        <li><a href="#contact" class="btn-primary">Book Session</a></li>
+        <li><a href="#contact" class="btn-primary">Register</a></li>
       </ul>
     </nav>
   </header>
-
   <main>
-    <!-- Hero Section -->
     <section class="hero" id="hero">
       <div class="hero-content">
         <h1>Excellence tutorial </h1>
@@ -37,7 +34,6 @@
       </div>
     </section>
 
-    <!-- Services / Subject Categories -->
     <section class="services" id="services">
       <h2>Subjects We Cover</h2>
       <div class="services-grid">
@@ -55,22 +51,18 @@
         </div>
       </div>
     </section>
-
-    <!-- Filterable Tutor Directory (Future API Data Target) -->
-    <section class="tutors-section" id="tutors">
+   <section class="tutors-section" id="tutors">
       <h2>Our Expert Tutors</h2>
-      
-      <!-- Filter Controls (Handled via JS now, State/API later) -->
-      <div class="filter-controls">
+       <div class="filter-controls">
         <button class="filter-btn active" data-filter="all">All</button>
         <button class="filter-btn" data-filter="math">Math</button>
         <button class="filter-btn" data-filter="science">Science</button>
         <button class="filter-btn" data-filter="languages">Languages</button>
       </div>
 
-      <!-- Container for Cards (Rendered statically or dynamically via JS) -->
+     
       <div class="tutors-grid" id="tutors-container">
-        <!-- Sample Tutor Card -->
+
         <article class="tutor-card" data-tutor-id="1" data-subject="math">
           <div class="tutor-avatar">
             <img src="assets/images/tutor1.jpg" alt="Photo of Alex Johnson">
@@ -85,9 +77,7 @@
         </article>
       </div>
     </section>
-
-    <!-- Booking / Consultation Form (Future API Post Endpoint) -->
-    <section class="contact-section" id="contact">
+  <section class="contact-section" id="contact">
       <h2>Request a Tutor</h2>
       <form id="booking-form" class="form-container">
         <div class="form-group">
@@ -120,8 +110,6 @@
       </form>
     </section>
   </main>
-
-  <!-- Footer -->
   <footer class="footer">
     <p>&copy; 2026 Excellence Tutor. All rights reserved.</p>
   </footer>
