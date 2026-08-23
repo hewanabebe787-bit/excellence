@@ -1,5 +1,9 @@
 
    // 1. RESET & GLOBAL STYLES
+<<<<<<< HEAD
+=======
+  
+>>>>>>> d51abc1 (Updated homepage with carousel and new images)
 
 * {
   margin: 0;
@@ -139,7 +143,11 @@ section h2 {
   color: #0d9488;
 }
 
+<<<<<<< HEAD
   // 4. HERO SECTION
+=======
+/* 4. HERO SECTION */
+>>>>>>> d51abc1 (Updated homepage with carousel and new images)
    
 
 .hero {
@@ -205,7 +213,11 @@ section h2 {
   color: #64748b;
 }
 
+<<<<<<< HEAD
   // 6. TUTORS DIRECTORY & GRID
+=======
+/* 6. TUTORS DIRECTORY & GRID */
+>>>>>>> d51abc1 (Updated homepage with carousel and new images)
    
 
 .filter-controls {
@@ -369,7 +381,11 @@ section h2 {
   box-shadow: 0 0 0 3px rgba(13, 148, 136, 0.2);
 }
 
+<<<<<<< HEAD
    // 8. FOOTER
+=======
+   /* 8. FOOTER */
+>>>>>>> d51abc1 (Updated homepage with carousel and new images)
 
 .footer {
   background-color: #3c508d;
@@ -379,7 +395,11 @@ section h2 {
   margin-top: auto;
 }
 
+<<<<<<< HEAD
    9. MEDIA QUERIES (RESPONSIVE LAYOUT)
+=======
+   /* 9. MEDIA QUERIES (RESPONSIVE LAYOUT) */
+>>>>>>> d51abc1 (Updated homepage with carousel and new images)
 
 @media (max-width: 768px) {
   .hero h1 {
