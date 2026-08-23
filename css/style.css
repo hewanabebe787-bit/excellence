@@ -1,9 +1,8 @@
 
    // 1. RESET & GLOBAL STYLES
-<<<<<<< HEAD
-=======
+
   
->>>>>>> d51abc1 (Updated homepage with carousel and new images)
+(Updated homepage with carousel and new images)
 
 * {
   margin: 0;
@@ -94,12 +93,12 @@ section h2 {
   border-radius: 50px;
 }
 
-   //3. NAVIGATION HEADER
+   /*3. NAVIGATION HEADER*/
    
-   /* #image{
+    #image{
     width:5px;
     height:5px;
-   } */
+   } 
 .navbar {
   position: sticky;
   top: 0;
