@@ -148,6 +148,36 @@ function initBookingForm() {
     bookingForm.reset();
   });
 }
+bookingForm.addEventListener('submit', async (e) => {
+  e.preventDefault();
+
+  const formData = {
+    studentName: document.getElementById('student-name').value,
+    studentEmail: document.getElementById('student-email').value,
+    subject: document.getElementById('subject-select').value,
+    message: document.getElementById('message').value,
+    submittedAt: new Date().toISOString()
+  };
+
+  await fetch('http://localhost:3000/db', {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify(formData)
+  });
+});
+// fetch('http://localhost:3000/db', {
+//   method: 'POST',
+//   headers: {
+//     'Content-Type': 'application/json'
+//   },
+//   body: JSON.stringify({
+//     studentName: 'John Doe',
+//     studentEmail: 'john@example.com',
+//     subject: 'Math',
+//     message: 'Need help',
+//     submittedAt: new Date().toISOString()
+//   })
+// })
  
 function initQuickBookButtons() {
   const bookButtons = document.querySelectorAll('.book-btn');
