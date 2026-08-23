@@ -1,9 +1,5 @@
 
-   // 1. RESET & GLOBAL STYLES
-
-  
-(Updated homepage with carousel and new images)
-
+  /* 1. RESET & GLOBAL STYLES */
 * {
   margin: 0;
   padding: 0;
@@ -16,7 +12,7 @@ html {
 }
 
 body {
-  background-color: #f8fafc;
+  background-image: linear-gradient(to right, #f8fafc, #e2e8f0);
   color: #1e293b;
   line-height: 1.6;
 }
@@ -48,7 +44,7 @@ section h2 {
   margin-bottom: 40px;
 }
 
-  // 2. BUTTONS & UI COMPONENTS
+  /* 2. BUTTONS & UI COMPONENTS */
  
 .btn-primary, .btn-secondary {
   display: inline-block;
@@ -95,11 +91,12 @@ section h2 {
 
    /*3. NAVIGATION HEADER*/
    
-    #image{
+    /* #image{
     width:5px;
     height:5px;
-   } 
+   }  */
 .navbar {
+  display: flex;
   position: sticky;
   top: 0;
   z-index: 1000;
@@ -113,17 +110,22 @@ section h2 {
   width: 100px;
   height:100px;
 }
-
-.navbar .logo span {
-  color: #d1c757;
+.navbar {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  background: #fff;
+  border-bottom: 1px solid #e2e8f0;
+  box-shadow: 0 1px 2px rgba(0,0,0,0.05);
 }
 
 .navbar nav {
+  max-width: 1200px;
+  margin: 0 auto;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  max-width: 1200px;
-  margin: 0 auto;
+  padding: 16px 20px;
 }
 
 .nav-links {
@@ -142,11 +144,8 @@ section h2 {
   color: #0d9488;
 }
 
-<<<<<<< HEAD
-  // 4. HERO SECTION
-=======
+
 /* 4. HERO SECTION */
->>>>>>> d51abc1 (Updated homepage with carousel and new images)
    
 
 .hero {
@@ -157,7 +156,8 @@ section h2 {
 .hero-content {
 
   max-width: 1600px;
-  margin-left: 300px;
+  margin: 0 auto;
+  text-align: center;
 }
 
 .hero h1 {
@@ -179,7 +179,7 @@ section h2 {
   justify-content: center;
   gap: 16px;
 }
-//5. SERVICES SECTION
+/* 5. SERVICES SECTION */
    
 .services-grid {
   display: grid;
@@ -212,11 +212,7 @@ section h2 {
   color: #64748b;
 }
 
-<<<<<<< HEAD
-  // 6. TUTORS DIRECTORY & GRID
-=======
 /* 6. TUTORS DIRECTORY & GRID */
->>>>>>> d51abc1 (Updated homepage with carousel and new images)
    
 
 .filter-controls {
@@ -380,11 +376,59 @@ section h2 {
   box-shadow: 0 0 0 3px rgba(13, 148, 136, 0.2);
 }
 
-<<<<<<< HEAD
-   // 8. FOOTER
-=======
-   /* 8. FOOTER */
->>>>>>> d51abc1 (Updated homepage with carousel and new images)
+.showcase-section {
+  padding: 80px 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.showcase-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 24px;
+}
+
+.registration-card {
+  background-color: #ffffff;
+  border: 1px solid #e2e8f0;
+  border-radius: 16px;
+  padding: 24px;
+  box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+}
+
+.registration-card .meta {
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+  margin-bottom: 12px;
+  font-size: 0.85rem;
+  color: #64748b;
+}
+
+.registration-card h3 {
+  font-size: 1.25rem;
+  color: #1e293b;
+  margin-bottom: 8px;
+}
+
+.registration-card p {
+  color: #475569;
+  margin-bottom: 8px;
+}
+
+.registration-card .subject-tag {
+  display: inline-block;
+  margin-top: 12px;
+  padding: 6px 12px;
+  border-radius: 999px;
+  background-color: #dbeafe;
+  color: #1e3a8a;
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+/* 8. FOOTER */
 
 .footer {
   background-color: #3c508d;
@@ -393,13 +437,8 @@ section h2 {
   padding: 32px 20px;
   margin-top: auto;
 }
-
-<<<<<<< HEAD
-   9. MEDIA QUERIES (RESPONSIVE LAYOUT)
-=======
-   /* 9. MEDIA QUERIES (RESPONSIVE LAYOUT) */
->>>>>>> d51abc1 (Updated homepage with carousel and new images)
-
+/* 
+   9. MEDIA QUERIES (RESPONSIVE LAYOUT) */
 @media (max-width: 768px) {
   .hero h1 {
     font-size: 2.25rem;
