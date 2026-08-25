@@ -1,26 +1,21 @@
-[
-  {
-    "id": 1,
-    "studentName": "Amara Ndlovu",
-    "studentEmail": "amara@example.com",
-    "subject": "Mathematics",
-    "message": "Improving algebra confidence and exam preparation.",
-    "submittedAt": "2026-08-01T10:00:00.000Z"
-  },
-  {
-    "id": 2,
-    "studentName": "Tariq Hassan",
-    "studentEmail": "tariq@example.com",
-    "subject": "Physics",
-    "message": "Looking for support in mechanics and practical problem solving.",
-    "submittedAt": "2026-08-05T14:30:00.000Z"
-  },
-  {
-    "id": 3,
-    "studentName": "Zoe Moyo",
-    "studentEmail": "zoe@example.com",
-    "subject": "English Literature",
-    "message": "Preparing for essay writing and literature analysis.",
-    "submittedAt": "2026-08-12T09:15:00.000Z"
-  }
-]
+{
+  "registrations": [
+    {
+      "id": "1",
+      "studentName": "Amara Ndlovu",
+      "studentEmail": "amara@example.com",
+      "subject": "Mathematics",
+      "message": "Improving algebra confidence and exam preparation.",
+      "submittedAt": "2026-08-01T10:00:00.000Z"
+    },
+    {
+      "studentName": "arse",
+      "studentEmail": "arse@gmail.com",
+      "subject": "english",
+      "message": "tell",
+      "submittedAt": "2026-08-25T11:41:59.291Z",
+      "id": "7SX8RSOthw4"
+    }
+  ],
+  "$schema": "./node_modules/json-server/schema.json"
+}
