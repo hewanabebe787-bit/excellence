@@ -1,13 +1,33 @@
 document.addEventListener('DOMContentLoaded', () => {
+  // === HERO SLIDESHOW ===
+  const slides = document.querySelectorAll('.slide');
+  let currentIndex = 0;
+
+  function showSlide(index) {
+    slides.forEach((slide, i) => {
+      slide.classList.toggle('active', i === index);
+    });
+  }
+
+  function nextSlide() {
+    currentIndex = (currentIndex + 1) % slides.length;
+    showSlide(currentIndex);
+  }
+
+  // Change slide every 3 seconds (3000ms)
+  setInterval(nextSlide, 5000);
+
+  // === INITIALIZERS ===
   initTutorFiltering();
   initBookingForm();
   initQuickBookButtons();
   loadRegistrations();
 });
 
+
+// === REGISTRATION LOADER ===
 async function loadRegistrations() {
   const showcase = document.getElementById('registrations-showcase');
-
   if (!showcase) return;
 
   try {
@@ -40,6 +60,8 @@ async function loadRegistrations() {
   }
 }
 
+
+// === TUTOR FILTERING ===
 function initTutorFiltering() {
   const filterButtons = document.querySelectorAll('.filter-btn');
   const tutorCards = document.querySelectorAll('.tutor-card');
@@ -67,9 +89,10 @@ function initTutorFiltering() {
   });
 }
 
+
+// === BOOKING FORM ===
 function initBookingForm() {
   const bookingForm = document.getElementById('booking-form');
-
   if (!bookingForm) return;
 
   bookingForm.addEventListener('submit', async (e) => {
@@ -96,15 +119,11 @@ function initBookingForm() {
     try {
       const response = await fetch('http://localhost:3000/registrations', {
         method: 'POST',
-        headers: {
-          'Content-Type': 'application/json'
-        },
+        headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(formData)
       });
 
-      if (!response.ok) {
-        throw new Error('Save failed');
-      }
+      if (!response.ok) throw new Error('Save failed');
 
       alert('Registration saved successfully!');
       bookingForm.reset();
@@ -116,6 +135,8 @@ function initBookingForm() {
   });
 }
 
+
+// === QUICK BOOK BUTTONS ===
 function initQuickBookButtons() {
   const bookButtons = document.querySelectorAll('.book-btn');
   const subjectSelect = document.getElementById('subject-select');
