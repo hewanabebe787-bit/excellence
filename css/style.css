@@ -44,7 +44,7 @@ section h2 {
 }
 
 /* 2. BUTTONS & UI COMPONENTS */
-.btn-primary, .btn-secondary {
+.btn-primary, .btn-secondary, .btn-tertiary {
   display: inline-block;
   padding: 12px 24px;
   font-size: 1rem;
@@ -55,7 +55,21 @@ section h2 {
   cursor: pointer;
   text-align: center;
 }
-
+.admin-btn {
+  
+  display: inline-block;
+  padding: 12px 24px;
+  
+  font-size: 1rem;
+  font-weight: 600;
+  border-radius: 8px;
+  transition: all 0.3s ease;
+  border: none;
+  cursor: pointer;
+   text-align: center; 
+  background-color: #d6c96a;
+  color: #ffffff;
+}
 .btn-primary {
   background-color: #8a7d1e;
   color: #ffffff;
@@ -88,7 +102,7 @@ section h2 {
 }
 
 /* 3. NAVIGATION HEADER */
-#image {
+#image { 
   width: 80px;
   height: 80px;
   border-radius: 50%;
@@ -477,9 +491,72 @@ section h2 {
   background-color: #1c2338;
   color: #ffffff;
   text-align: center;
-  padding: 100px 100px;
+  padding: 90px 90px;
   margin-top: auto;
 }
+
+
+
+.footer-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  margin-bottom: 20px;
+}
+
+.footer-logo {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+}
+
+
+
+.footer-logo h3 {
+  margin: 0;
+}
+
+.social-icons a {
+  color: #fff;
+  margin-right: 10px;
+  font-size: 18px;
+  text-decoration: none;
+}
+
+.footer-column {
+  flex: 1;
+  min-width: 150px;
+}
+
+.footer-column h4 {
+  margin-bottom: 10px;
+}
+
+.footer-column ul {
+  list-style: none;
+  padding: 0;
+}
+
+.footer-column ul li {
+  margin-bottom: 8px;
+}
+
+.footer-column ul li a {
+  color: #fff;
+  text-decoration: none;
+}
+
+.footer-column ul li a:hover {
+  text-decoration: underline;
+}
+
+.footer-bottom {
+  text-align: center;
+  border-top: 1px solid #444;
+  padding-top: 10px;
+  font-size: 14px;
+}
+
 /* 
    9. MEDIA QUERIES (RESPONSIVE LAYOUT) */
 @media (max-width: 768px) {
@@ -507,3 +584,4 @@ section h2 {
     grid-template-columns: 1fr;
   }
 }
+
