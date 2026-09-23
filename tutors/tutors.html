@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>tutors page</title>
+    <link rel="stylesheet" href="tutors.css">
+</head>
+<body>
+  <section class="contact-section" id="contact">
+    <h2>Create Account</h2>
+    <form id="booking-form" class="form-container">
+      <div class="form-group">
+        <label for="student-name">Full Name</label>
+        <input type="text" id="student-name" name="studentName" required placeholder="John Doe">
+      </div>
+
+      <div class="form-group">
+        <label for="student-email">Email Address</label>
+        <input type="email" id="student-email" name="studentEmail" required placeholder="john@example.com">
+      </div>
+
+     <div class="form-group">
+     <label for="age">Age</label>
+     <input type="number" id="age" name="age" required placeholder="Enter your age">
+     </div>
+
+      <div class="form-group">
+        <label for="message">Additional Notes</label>
+        <textarea id="message" name="message" rows="4" placeholder="Tell us about your learning goals..."></textarea>
+      </div>
+
+      <button type="submit" class="btn-primary">next</button>
+    </form>
+  </section>
+  <section class="showcase-section">
+    <h2>Registrations</h2>
+    <div id="registrations-list" class="showcase-grid"></div>
+  </section>
+</body>
+</html>

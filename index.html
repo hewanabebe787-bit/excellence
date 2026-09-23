@@ -21,8 +21,10 @@
       <ul class="nav-links">
         <li><a href="#about">About Us</a></li>
         <li><a href="#services">Services</a></li>
-        <li><a href="#tutors">Find a Tutor</a></li>
+        <li><a href="student/student.html">Request a Tutor</a></li>
+        <li><a href="tutors/tutors.html">Find a job</a></li>
         <li><a href="#contact" class="btn-primary">Register</a></li>
+        <li><a href="admin/admin.html" class="admin-btn">Admin</a></li>
       </ul>
     </nav>
   </header>
@@ -67,12 +69,21 @@
         <h1>Excellence tutorial </h1>
         <p>lift up your kids to excellence.</p>
         <div class="hero-actions">
-          <a href="#tutors" class="btn-primary">Find a Tutor</a>
-          <a href="#how-it-works" class="btn-secondary">How It Works</a>
+          <a href="student/student.html" class="btn-primary">Request a Tutor</a>
+          <a href="tutors/tutors.html" class="btn-secondary">Find a Job</a>
         </div>
       </div>
     </section>
-
+    <section class="about" id="about">
+      <h2>About Us</h2>
+      <p>About Us
+        Empowering Students to Learn, Grow, and Succeed
+        We are a dedicated tutorial center committed to helping students reach their academic goals through quality education, personalized support, and a learning environment that encourages growth.
+        Our mission is to make learning more effective, engaging, and accessible by providing students with experienced tutors, structured lessons, and the individual attention they need to build confidence and improve their performance.
+        We believe that every student has unique abilities and learning needs. That is why we focus not only on academic results, but also on developing strong study habits, critical thinking, problem-solving skills, and confidence.
+        With a student-centered approach and a commitment to excellence, we work together with students and families to create a stronger foundation for academic success.
+        Your goals matter to us. Your success is our purpose.</p>
+    </section>
     <section class="services" id="services">
       <h2>Subjects We Cover</h2>
       <div class="services-grid">
@@ -90,72 +101,77 @@
         </div>
       </div>
     </section>
-   <section class="tutors-section" id="tutors">
-      <h2>Our Expert Tutors</h2>
-       <div class="filter-controls">
-        <button class="filter-btn active" data-filter="all">All</button>
-        <button class="filter-btn" data-filter="math">Math</button>
-        <button class="filter-btn" data-filter="science">Science</button>
-        <button class="filter-btn" data-filter="languages">Languages</button>
-      </div>
+   
+ 
 
-     
-      <div class="tutors-grid" id="tutors-container">
-
-        <article class="tutor-card" data-tutor-id="1" data-subject="math">
-          <div class="tutor-avatar">
-            <img src="asset/1st img.jpeg" alt="Photo of Alex Johnson">
-          </div>
-          <div class="tutor-info">
-            <span class="badge">Math Specialist</span>
-            <h3>Alex Johnson</h3>
-            <p class="qualification">M.Sc. in Applied Mathematics</p>
-            <p class="rate"><strong>$35</strong> / hour</p>
-            <button class="btn-secondary book-btn" data-tutor-id="1">Book Consultation</button>
-          </div>
-        </article>
-      </div>
-    </section>
-  <section class="contact-section" id="contact">
-      <h2>Request a Tutor</h2>
-      <form id="booking-form" class="form-container">
-        <div class="form-group">
-          <label for="student-name">Full Name</label>
-          <input type="text" id="student-name" name="studentName" required placeholder="John Doe">
-        </div>
-
-        <div class="form-group">
-          <label for="student-email">Email Address</label>
-          <input type="email" id="student-email" name="studentEmail" required placeholder="john@example.com">
-        </div>
-
-        <div class="form-group">
-          <label for="subject-select">Subject Needed</label>
-          <select id="subject-select" name="subject" required>
-            <option value="">Select a Subject</option>
-            <option value="math">Mathematics</option>
-            <option value="physics">Physics</option>
-            <option value="computer-science">Computer Science</option>
-            <option value="english">English Literature</option>
-          </select>
-        </div>
-
-        <div class="form-group">
-          <label for="message">Additional Notes</label>
-          <textarea id="message" name="message" rows="4" placeholder="Tell us about your learning goals..."></textarea>
-        </div>
-
-        <button type="submit" class="btn-primary">Submit Request</button>
-      </form>
-    </section>
-
-    <section class="showcase-section" id="showcase">
-      <h2>Recent Registrations</h2>
-      <div class="showcase-grid" id="registrations-showcase"></div>
-    </section>
+   
   </main>
-  <footer class="footer">
-    <p>&copy; 2026 Excellence Tutor. All rights reserved.</p>
+  
+    <footer class="footer">
+      <div class="footer-container">
+        <!-- Left: Logo + Title -->
+        <div class="footer-logo">
+          <img id="image" src="asset/logoex.jpg" alt="Excellence Tutor Logo">
+          <h3>Excellence Tutor</h3>
+          <div class="social-icons">
+            <a href="#"><i class="fab fa-twitter"></i></a>
+            <a href="#"><i class="fab fa-linkedin"></i></a>
+            <a href="#"><i class="fab fa-facebook"></i></a>
+            <a href="#"><i class="fas fa-link"></i></a>
+          </div>
+        </div>
+    
+        <!-- Middle: Quick Links -->
+        <div class="footer-column">
+          <h4>Quick Links</h4>
+          <ul>
+            <li><a href="#">Courses</a></li>
+            <li><a href="#">Tutoring Services</a></li>
+            <li><a href="#">News & Updates</a></li>
+          </ul>
+        </div>
+    
+        <!-- Middle: Resources -->
+        <div class="footer-column">
+          <h4>Resources</h4>
+          <ul>
+            <li><a href="#">Study Materials</a></li>
+            <li><a href="#">Exam Prep</a></li>
+            <li><a href="#">Cheat Sheets</a></li>
+            <li><a href="#">Application Portal</a></li>
+          </ul>
+        </div>
+    
+        <!-- Right: Contact -->
+        <div class="footer-column">
+          <h4>Contact</h4>
+          <ul>
+            <li><a href="#">Main Office</a></li>
+            <li><a href="#">Regional Offices</a></li>
+          </ul>
+        </div>
+      </div>
+    
+      <!-- Bottom -->
+      <div class="footer-bottom">
+        <p>© 2026 Excellence Tutor. All rights reserved.</p>
+      </div>
+    </footer>
+    
+</footer>
+
+<style>
+.custom-footer {
+  background: #0a1a3a; /* dark blue background */
+  background: linear-gradient(to top, #0a1a3a 80%, #1f3a70 100%); /* subtle gradient */
+  color: #ffffff; /* white text */
+  text-align: center; /* center the text */
+  padding: 20px 0; /* spacing top and bottom */
+  font-family: Arial, sans-serif;
+  font-size: 14px;
+}
+</style>
+
   </footer>
 
   <script src="js/main.js"></script>
