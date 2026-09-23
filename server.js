@@ -5,8 +5,10 @@ require('dotenv').config();
 
 const app = express();
 
+
 app.use(cors());
 app.use(express.json());
+app.use(express.static(__dirname));
 
 const registrationSchema = new mongoose.Schema({
   studentName: { type: String, required: true },
@@ -34,11 +36,12 @@ app.post('/registrations', async (req, res) => {
     res.status(400).json({ error: 'Invalid registration data' });
   }
 });
-
 mongoose.connect(process.env.MONGODB_URI)
   .then(() => {
+    console.log('MongoDB connected');
+
     app.listen(3000, () => {
-      console.log('API running on http://localhost:3000');
+      console.log('Server running on http://localhost:3000');
     });
   })
   .catch((error) => {
