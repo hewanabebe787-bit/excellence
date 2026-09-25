@@ -8,6 +8,11 @@
 html {
   scroll-behavior: smooth;
   font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+  scrollbar-width: none;
+}
+
+html::-webkit-scrollbar {
+  display: none;
 }
 
 body {
@@ -103,10 +108,11 @@ section h2 {
 
 /* 3. NAVIGATION HEADER */
 #image { 
-  width: 80px;
-  height: 80px;
+  width: 65px;
+  height: 60px;
   border-radius: 50%;
- 
+ padding: 1px;
+  border: 2px solid #e7d236; 
 }
 
 .navbar {
@@ -117,8 +123,10 @@ section h2 {
   background-color: #ffffff;
   border-bottom: 1px solid #e2e8f0;
   box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
-  padding: 16px 20px;
-  height: 100px;
+  padding: 8px 100px;
+  margin: 30px;
+  height: 70px;
+  border-radius:60px 60px 60px 60px ;
 }
 
 .navbar nav {
