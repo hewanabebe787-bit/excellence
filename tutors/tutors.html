@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>tutors page</title>
     <link rel="stylesheet" href="tutors.css">
+    <script src="tutors.js" defer></script>
 </head>
 <body>
   <section class="contact-section" id="contact">
@@ -16,8 +17,13 @@
       </div>
 
       <div class="form-group">
-        <label for="student-email">Email Address</label>
-        <input type="email" id="student-email" name="studentEmail" required placeholder="john@example.com">
+        <label for="tutor-email">Email Address</label>
+        <input type="email" id="tutor-email" name="tutorEmail" required placeholder="john@example.com">
+      </div>
+
+      <div class="form-group">
+        <label for="tutor-phone">phone number</label>
+        <input type="number" id="tutor-phone" name="tutorPhone" required placeholder="0912345678">
       </div>
 
      <div class="form-group">
@@ -30,7 +36,7 @@
         <textarea id="message" name="message" rows="4" placeholder="Tell us about your learning goals..."></textarea>
       </div>
 
-      <button type="submit" class="btn-primary">next</button>
+      <button type="button" id="nextBtn" class="btn-primary">Next</button>
     </form>
   </section>
   <section class="showcase-section">
@@ -38,4 +44,168 @@
     <div id="registrations-list" class="showcase-grid"></div>
   </section>
 </body>
+
+<!-- second slide -->
+<form id="secondForm" class="education-form">
+
+  <h2>Choose Your Education Level</h2>
+  <p class="education-subtitle">
+    Select the option that best describes your current education level.
+  </p>
+
+  <div class="education-options">
+
+    <div class="education-option">
+      <input type="radio" id="above12" name="level" value="Above 12" checked>
+      <label for="above12">
+        <span class="option-icon">🎓</span>
+        <span class="option-content">
+          <strong>Above Grade 12</strong>
+          <small>High school graduate or equivalent</small>
+        </span>
+        <span class="checkmark">✓</span>
+      </label>
+    </div>
+
+    <div class="education-option">
+      <input type="radio" id="university" name="level" value="University Student">
+      <label for="university">
+        <span class="option-icon">🏫</span>
+        <span class="option-content">
+          <strong>University Student</strong>
+          <small>Currently studying at university</small>
+        </span>
+        <span class="checkmark">✓</span>
+      </label>
+    </div>
+
+    <div class="education-option">
+      <input type="radio" id="graduated" name="level" value="Graduated">
+      <label for="graduated">
+        <span class="option-icon">🎓</span>
+        <span class="option-content">
+          <strong>Graduated</strong>
+          <small>have completed their undergraduate  studies</small>
+        </span>
+        <span class="checkmark">✓</span>
+      </label>
+    </div>
+    
+    <div class="education-option">
+      <input type="radio" id="teacher" name="level" value="Teacher">
+      <label for="teacher">
+        <span class="option-icon">👩‍🏫</span>
+        <span class="option-content">
+          <strong>Teacher</strong>
+          <small>Currently working as a teacher</small>
+        </span>
+        <span class="checkmark">✓</span>
+      </label>
+    </div>
+
+  </div>
+ 
+     
+<!-- Third Page -->
+<section id="thirdPage" class="application-page">
+
+  <h2>Complete Your Application</h2>
+
+  <p class="application-subtitle">
+    Please provide the information below to complete your tutor application.
+  </p>
+
+  <!-- Experience -->
+  <div class="application-group">
+    <label>Do you have teaching experience?</label>
+
+    <div class="experience-options">
+
+      <label class="choice-card">
+        <input type="radio" name="experience" value="yes" id="experienceYes">
+        <span>Yes</span>
+      </label>
+
+      <label class="choice-card">
+        <input type="radio" name="experience" value="no" id="experienceNo">
+        <span>No</span>
+      </label>
+
+    </div>
+  </div>
+
+  <!-- Experience details -->
+  <div id="experienceDetails" class="application-group">
+    <label for="experienceText">
+      Tell us about your experience
+    </label>
+
+    <textarea
+      id="experienceText"
+      rows="5"
+      placeholder="Tell us where you taught, what you taught, and how long you have been teaching..."
+    ></textarea>
+  </div>
+
+  <!-- CV -->
+  <div class="application-group">
+    <label for="cv">Upload your CV</label>
+
+    <input
+      type="file"
+      id="cv"
+      accept=".pdf,.doc,.docx"
+    >
+
+    <small>Accepted formats: PDF, DOC, DOCX</small>
+  </div>
+
+  <!-- Fayda -->
+  <div class="application-group">
+    <label for="fayda">Upload your Fayda</label>
+
+    <input
+      type="file"
+      id="fayda"
+      accept=".pdf,.jpg,.jpeg,.png"
+    >
+
+    <small>Upload a clear copy of your Fayda document.</small>
+  </div>
+
+  <!-- Finish -->
+  <button type="button" id="finishBtn" class="btn-primary">
+    Finish Application
+  </button>
+
+</section>
+
+
+<!-- Pending Page -->
+<section id="pendingPage" class="pending-page">
+
+  <div class="pending-icon">⏳</div>
+
+  <h2>Application Pending</h2>
+
+  <p>
+    Your application has been submitted successfully.
+  </p>
+
+  <p>
+    Our team will review your application and notify you
+    once your application has been approved.
+  </p>
+
+  <div class="pending-status">
+    Pending Review
+  </div>
+
+</section>
+
+
+
+
+  </form>
+</form>
 </html>
