@@ -1,200 +1,557 @@
-/* 1. RESET & GLOBAL STYLES */
+/* ================================
+   RESET
+================================ */
+
 * {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
+
+
+/* ================================
+   GENERAL
+================================ */
 
 html {
-  scroll-behavior: smooth;
-  font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
-  scrollbar-width: none;
-}
-
-html::-webkit-scrollbar {
-  display: none;
+    scroll-behavior: smooth;
+    font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
 }
 
 body {
-  background-image: linear-gradient(to right, #f8fafc, #e2e8f0);
-  color: #1e293b;
-  line-height: 1.6;
+    min-height: 100vh;
+
+    background: linear-gradient(
+        to right,
+        #f8fafc,
+        #e2e8f0
+    );
+
+    color: #1e293b;
 }
 
-a {
-  text-decoration: none;
-  color: inherit;
+
+/* ================================
+   MAIN PAGE
+================================ */
+
+.student-page {
+    min-height: 100vh;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    padding: 50px 20px;
 }
 
-ul {
-  list-style: none;
+
+/* ================================
+   MAIN CARD
+================================ */
+
+.student-card {
+    width: 100%;
+    max-width: 1100px;
+
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+
+    background-color: white;
+
+    border-radius: 24px;
+
+    overflow: hidden;
+
+    box-shadow:
+        0 20px 40px rgba(0, 0, 0, 0.08),
+        0 4px 10px rgba(0, 0, 0, 0.04);
 }
 
-img {
-  max-width: 100%;
-  display: block;
+
+/* ================================
+   LEFT SIDE
+================================ */
+
+.student-intro {
+
+    background: linear-gradient(
+        145deg,
+        #8a7d1e,
+        #b5a52f
+    );
+
+    color: white;
+
+    padding: 55px 45px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    position: relative;
+
+    overflow: hidden;
 }
 
-section {
-  padding: 80px 20px;
-  max-width: 1200px;
-  margin: 0 auto;
+
+/* Decorative circle */
+
+.student-intro::before {
+
+    content: "";
+
+    position: absolute;
+
+    width: 220px;
+    height: 220px;
+
+    border-radius: 50%;
+
+    background: rgba(255, 255, 255, 0.08);
+
+    top: -80px;
+    right: -70px;
 }
 
-section h2 {
-  font-size: 2.25rem;
-  color: #8a7d1e;
-  text-align: center;
-  margin-bottom: 40px;
+
+/* Second decorative circle */
+
+.student-intro::after {
+
+    content: "";
+
+    position: absolute;
+
+    width: 160px;
+    height: 160px;
+
+    border-radius: 50%;
+
+    background: rgba(255, 255, 255, 0.06);
+
+    bottom: -70px;
+    left: -60px;
 }
 
-/* 2. BUTTONS & UI COMPONENTS */
-.btn-primary, .btn-secondary {
-  display: inline-block;
-  padding: 12px 24px;
-  font-size: 1rem;
-  font-weight: 600;
-  border-radius: 8px;
-  transition: all 0.3s ease;
-  border: none;
-  cursor: pointer;
-  text-align: center;
+
+/* ================================
+   ICON
+================================ */
+
+.student-icon {
+
+    width: 65px;
+    height: 65px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background: rgba(255, 255, 255, 0.15);
+
+    border: 1px solid rgba(255, 255, 255, 0.25);
+
+    border-radius: 18px;
+
+    font-size: 30px;
+
+    margin-bottom: 25px;
+
+    backdrop-filter: blur(8px);
+
+    box-shadow:
+        0 8px 20px rgba(0, 0, 0, 0.08);
+
+    position: relative;
+    z-index: 1;
 }
 
-.btn-primary {
-  background-color: #8a7d1e;
-  color: #ffffff;
+
+/* ================================
+   LEFT HEADING
+================================ */
+
+.student-intro h1 {
+
+    font-size: 2.6rem;
+
+    line-height: 1.15;
+
+    letter-spacing: -1px;
+
+    margin-bottom: 18px;
+
+    max-width: 350px;
+
+    position: relative;
+    z-index: 1;
 }
 
-.btn-primary:hover {
-  background-color: #c7cc2b;
-  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+
+/* ================================
+   LEFT PARAGRAPH
+================================ */
+
+.student-intro > p {
+
+    color: rgba(255, 255, 255, 0.88);
+
+    line-height: 1.7;
+
+    font-size: 1.05rem;
+
+    max-width: 400px;
+
+    position: relative;
+    z-index: 1;
 }
 
-.btn-secondary {
-  background-color: #0d9488;
-  color: #ffffff;
+
+/* ================================
+   BENEFITS
+================================ */
+
+.benefits {
+
+    margin-top: 30px;
+
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 12px;
+
+    position: relative;
+    z-index: 1;
 }
 
-.btn-secondary:hover {
-  background-color: #0f766e;
-  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+
+/* ================================
+   BENEFIT CARD
+================================ */
+
+.benefit {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 12px;
+
+    padding: 12px 14px;
+
+    background: rgba(255, 255, 255, 0.10);
+
+    border: 1px solid rgba(255, 255, 255, 0.12);
+
+    border-radius: 12px;
+
+    backdrop-filter: blur(6px);
+
+    transition: 0.3s ease;
 }
 
-.badge {
-  display: inline-block;
-  padding: 4px 12px;
-  font-size: 0.75rem;
-  font-weight: 700;
-  text-transform: uppercase;
-  color: #1e3a8a;
-  background-color: #dbeafe;
-  border-radius: 50px;
+
+/* Hover */
+
+.benefit:hover {
+
+    background: rgba(255, 255, 255, 0.18);
+
+    transform: translateX(5px);
 }
 
-/* ==========================================================================
-   7. CONTACT / BOOKING FORM
-   ========================================================================== */
 
-.contact-section {
-  background-color: #ffffff;
-  border-radius: 16px;
-  border: 1px solid #e2e8f0;
-  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
-  margin-top: 40px;
-  margin-bottom: 80px;
+/* Check circle */
+
+.benefit span {
+
+    width: 27px;
+    height: 27px;
+
+    flex-shrink: 0;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 50%;
+
+    background: rgba(255, 255, 255, 0.18);
+
+    font-weight: bold;
 }
+
+
+/* Benefit text */
+
+.benefit p {
+
+    color: white;
+
+    font-size: 0.95rem;
+}
+
+
+/* ================================
+   RIGHT SIDE
+================================ */
+
+.student-form {
+
+    padding: 55px 50px;
+
+    display: flex;
+
+    flex-direction: column;
+
+    justify-content: center;
+
+    background: #ffffff;
+}
+
+
+/* ================================
+   FORM TITLE
+================================ */
+
+.student-form h2 {
+
+    font-size: 2rem;
+
+    font-weight: 700;
+
+    color: #1e293b;
+
+    letter-spacing: -0.5px;
+
+    margin-bottom: 8px;
+}
+
+
+/* ================================
+   FORM DESCRIPTION
+================================ */
+
+.form-description {
+
+    color: #64748b;
+
+    font-size: 0.95rem;
+
+    margin-bottom: 30px;
+}
+
+
+/* ================================
+   FORM
+================================ */
 
 .form-container {
-  max-width: 600px;
-  margin: 0 auto;
-  display: flex;
-  flex-direction: column;
-  gap: 20px;
+
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 20px;
 }
+
+
+/* ================================
+   FORM GROUP
+================================ */
 
 .form-group {
-  display: flex;
-  flex-direction: column;
-  gap: 8px;
+
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 8px;
 }
+
+
+/* ================================
+   LABEL
+================================ */
 
 .form-group label {
-  font-weight: 600;
-  font-size: 0.95rem;
-  color: #1e293b;
+
+    font-weight: 600;
+
+    font-size: 0.95rem;
+
+    color: #1e293b;
 }
+
+
+/* ================================
+   INPUT / TEXTAREA
+================================ */
 
 .form-group input,
-.form-group select,
 .form-group textarea {
-  width: 100%;
-  padding: 12px 16px;
-  font-size: 1rem;
-  font-family: inherit;
-  border: 1px solid #e2e8f0;
-  border-radius: 8px;
-  background-color: #f8fafc;
-  transition: all 0.3s ease;
+
+    width: 100%;
+
+    padding: 13px 16px;
+
+    font-size: 1rem;
+
+    font-family: inherit;
+
+    border: 1px solid #e2e8f0;
+
+    border-radius: 10px;
+
+    background-color: #f8fafc;
+
+    transition: all 0.3s ease;
 }
+
+
+/* Remove textarea resize */
+
+.form-group textarea {
+
+    resize: vertical;
+}
+
+
+/* ================================
+   INPUT FOCUS
+================================ */
 
 .form-group input:focus,
-.form-group select:focus,
 .form-group textarea:focus {
-  outline: none;
-  border-color: #0d9488;
-  background-color: #ffffff;
-  box-shadow: 0 0 0 3px rgba(13, 148, 136, 0.2);
+
+    outline: none;
+
+    border-color: #8a7d1e;
+
+    background-color: #ffffff;
+
+    box-shadow:
+        0 0 0 3px rgba(138, 125, 30, 0.15);
 }
 
-.showcase-section {
-  padding: 80px 20px;
-  max-width: 1200px;
-  margin: 0 auto;
+
+/* ================================
+   BUTTON
+================================ */
+
+.btn-primary {
+
+    width: 100%;
+
+    padding: 14px 24px;
+
+    border: none;
+
+    border-radius: 10px;
+
+    background-color: #8a7d1e;
+
+    color: white;
+
+    font-size: 1rem;
+
+    font-weight: 600;
+
+    cursor: pointer;
+
+    transition: all 0.3s ease;
 }
 
-.showcase-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-  gap: 24px;
+
+/* Button hover */
+
+.btn-primary:hover {
+
+    background-color: #746a18;
+
+    transform: translateY(-2px);
+
+    box-shadow:
+        0 8px 15px rgba(138, 125, 30, 0.25);
 }
 
-.registration-card {
-  background-color: #ffffff;
-  border: 1px solid #e2e8f0;
-  border-radius: 16px;
-  padding: 24px;
-  box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+
+/* ================================
+   TABLET
+================================ */
+
+@media (max-width: 850px) {
+
+    .student-card {
+
+        grid-template-columns: 1fr;
+
+    }
+
+    .student-intro {
+
+        padding: 45px 35px;
+
+    }
+
+    .student-form {
+
+        padding: 45px 35px;
+
+    }
+
 }
 
-.registration-card .meta {
-  display: flex;
-  justify-content: space-between;
-  gap: 12px;
-  margin-bottom: 12px;
-  font-size: 0.85rem;
-  color: #64748b;
-}
 
-.registration-card h3 {
-  font-size: 1.25rem;
-  color: #1e293b;
-  margin-bottom: 8px;
-}
+/* ================================
+   MOBILE
+================================ */
 
-.registration-card p {
-  color: #475569;
-  margin-bottom: 8px;
-}
+@media (max-width: 500px) {
 
-.registration-card .subject-tag {
-  display: inline-block;
-  margin-top: 12px;
-  padding: 6px 12px;
-  border-radius: 999px;
-  background-color: #dbeafe;
-  color: #1e3a8a;
-  font-size: 0.75rem;
-  font-weight: 700;
-  text-transform: uppercase;
+    .student-page {
+
+        padding: 20px 12px;
+
+    }
+
+    .student-card {
+
+        border-radius: 18px;
+
+    }
+
+    .student-intro {
+
+        padding: 40px 25px;
+
+    }
+
+    .student-intro h1 {
+
+        font-size: 2rem;
+
+    }
+
+    .student-intro > p {
+
+        font-size: 0.95rem;
+
+    }
+
+    .student-form {
+
+        padding: 40px 25px;
+
+    }
+
+    .student-form h2 {
+
+        font-size: 1.7rem;
+
+    }
+
 }

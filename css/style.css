@@ -8,12 +8,19 @@
 html {
   scroll-behavior: smooth;
   font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+  scrollbar-width: none;
+  scroll-snap-type: y mandatory;
+}
+
+html::-webkit-scrollbar {
+  display: none;
 }
 
 body {
   background-image: linear-gradient(to right, #f8fafc, #e2e8f0);
   color: #1e293b;
   line-height: 1.6;
+  margin: 0;
 }
 
 a {
@@ -32,10 +39,14 @@ img {
 
 section {
   padding: 80px 20px;
-  max-width: 1200px;
+  max-width: 12000px;
   margin: 0 auto;
 }
-
+section.about {
+  padding: 80px 20px;
+  max-width: 12000px;
+  margin: 0 auto;
+}
 section h2 {
   font-size: 2.25rem;
   color: #8a7d1e;
@@ -103,10 +114,11 @@ section h2 {
 
 /* 3. NAVIGATION HEADER */
 #image { 
-  width: 80px;
-  height: 80px;
+  width: 65px;
+  height: 60px;
   border-radius: 50%;
- 
+ padding: 1px;
+  border: 2px solid #e7d236; 
 }
 
 .navbar {
@@ -114,11 +126,13 @@ section h2 {
   position: sticky;
   top: 0;
   z-index: 1000;
-  background-color: #ffffff;
+  background-color: rgba(255, 255, 255, 0.7);
   border-bottom: 1px solid #e2e8f0;
   box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
-  padding: 16px 20px;
-  height: 100px;
+  padding: 0px 0px;
+  margin: 5px;
+  height: 70px;
+  border-radius:60px 60px 60px 60px ;
   
 }
 
@@ -148,7 +162,7 @@ section h2 {
 }
 
 /* 4. HERO BACKGROUND */
-.hero.background {
+.hero.background  {
   position: relative;
   width: 100%;
   height: 92.5vh; /* full screen */
@@ -206,7 +220,7 @@ section h2 {
 
 .hero {
   text-align: center;
-  padding: 120px 20px 80px;
+  padding: 12px 20px 80px;
 }
 
 .hero-content {
@@ -214,6 +228,7 @@ section h2 {
   max-width: 1600px;
   margin: 0 auto;
   text-align: center;
+  color: #1e293b;
 }
 
 .hero h1 {
@@ -235,9 +250,58 @@ section h2 {
   justify-content: center;
   gap: 16px;
 }
+/* about section */
+#about {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 50px;
+
+    padding: 80px 10%;
+}
+
+.about-text {
+    flex: 1;
+    width: 500px;
+}
+
+.about-text h2 {
+    font-size: 70px;
+    margin-bottom: 20px;
+}
+
+
+.about-text p {
+    line-height: 1.7;
+    margin-bottom: 15px;
+    font-size: 18px;
+}
+
+.about-image {
+    flex: 1;
+}
+
+ .about {
+    display: flex;
+    flex-direction: row-reverse;
+    align-items: center;
+    justify-content: space-between;
+    gap: 50px;
+     padding: 80px 5px 80px 5px;
+}
+
+.about-image img {
+    /* width: 100%; */
+    min-width: 600px;
+    height: 600px;
+    object-fit: cover;
+    border-radius: 15px;
+}
 
 /* 5. SERVICES SECTION */
-   
+  .services{
+height: 100%;
+   }
 .services-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
@@ -492,7 +556,7 @@ section h2 {
   background-color: #1c2338;
   color: #ffffff;
   text-align: center;
-  padding: 90px 90px;
+  padding: 50px 90px;
   margin-top: auto;
 }
 
@@ -502,7 +566,7 @@ section h2 {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
-  margin-bottom: 20px;
+  margin-bottom: 5px;
 }
 
 .footer-logo {
@@ -554,7 +618,7 @@ section h2 {
 .footer-bottom {
   text-align: center;
   border-top: 1px solid #444;
-  padding-top: 10px;
+  padding-top: 50px;
   font-size: 14px;
 }
 
@@ -584,5 +648,14 @@ section h2 {
   .tutors-grid {
     grid-template-columns: 1fr;
   }
+   .about {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .about-image img {
+        max-width: 100%;
+        height: 500px;
+    }
 }
 
