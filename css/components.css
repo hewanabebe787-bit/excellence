@@ -1,0 +1,137 @@
+/* Shared component styles, matching the existing page styles. */
+#image {
+  width: 45px;
+  height: 45px;
+  border-radius: 50%;
+  padding: 7px;
+  margin-right: 13px;
+  border: 2px solid #e7d236;
+}
+
+.navbar {
+  display: flex;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  gap: 350px;
+  background-color: rgba(255, 255, 255, 0.7);
+  border-bottom: 1px solid #e2e8f0;
+  box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+  padding: 0px 0px;
+  margin: 5px 55px 2px 55px;
+  height: 45px;
+  border-radius: 60px;
+}
+
+.navbar nav {
+  max-width: 1000px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 5px 20px;
+}
+
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: 32px;
+}
+
+.nav-links a {
+  font-weight: 500;
+  color: #1e293b;
+  transition: all 0.3s ease;
+}
+
+.nav-links a:hover {
+  color: #0d9488;
+}
+
+.footer {
+  background-color: #4d3d23;
+  color: #ffffff;
+  text-align: center;
+  padding: 30px 90px 10px 90px;
+  margin-top: auto;
+}
+
+.footer-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  margin-bottom: 5px;
+}
+
+.footer-logo {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+}
+
+.footer-logo h3 {
+  margin: 0;
+}
+
+.social-icons a {
+  color: #fff;
+  margin-right: 10px;
+  font-size: 18px;
+  text-decoration: none;
+}
+
+.footer-column {
+  flex: 1;
+  min-width: 150px;
+}
+
+.footer-column h4 {
+  margin-bottom: 10px;
+}
+
+.footer-column ul {
+  list-style: none;
+  padding: 0;
+}
+
+.footer-column ul li {
+  margin-bottom: 8px;
+}
+
+.footer-column ul li a {
+  color: #fff;
+  text-decoration: none;
+}
+
+.footer-column ul li a:hover {
+  text-decoration: underline;
+}
+
+.footer-bottom {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 24px;
+  border-top: 1px solid #444;
+  padding-top: 16px;
+  font-size: 14px;
+}
+
+.footer-bottom .social-icons,
+.footer-bottom p {
+  margin: 0;
+}
+
+.footer-bottom p {
+  margin: 0;
+  color: #fff;
+  margin-left: 600px;
+}
+
+.social-icons {
+  margin-top: 10px;
+  margin-right: 900px;
+}

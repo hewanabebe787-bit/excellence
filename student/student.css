@@ -29,6 +29,59 @@ body {
 
     color: #1e293b;
 }
+/* 3. NAVIGATION HEADER */
+#image { 
+  width: 45px;
+  height: 45px;
+  border-radius: 50%;
+ padding: 7px;
+ margin-right: 13px;
+  border: 2px solid #e7d236; 
+}
+
+.navbar {
+  display: flex;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  gap: 350px;
+  background-color: rgba(255, 255, 255, 0.7);
+  border-bottom: 1px solid #e2e8f0;
+  box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+  padding: 0px 0px;
+  margin: 5px 55px 2px 55px;
+  height: 45px;
+  border-radius:60px 60px 60px 60px ;
+}
+
+.navbar nav {
+  max-width: 1000px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 5px 20px;
+}
+
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: 32px;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.nav-links a {
+  font-weight: 500;
+  color: #1e293b;
+    text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+.nav-links a:hover {
+  color: #0d9488;
+}
 
 
 /* ================================
@@ -42,7 +95,7 @@ body {
     align-items: center;
     justify-content: center;
 
-    padding: 50px 20px;
+    padding: 10px 20px 24px;
 }
 
 
@@ -52,14 +105,14 @@ body {
 
 .student-card {
     width: 100%;
-    max-width: 1100px;
+    max-width: 920px;
 
     display: grid;
     grid-template-columns: 1fr 1fr;
 
     background-color: white;
 
-    border-radius: 24px;
+    border-radius: 18px;
 
     overflow: hidden;
 
@@ -77,13 +130,13 @@ body {
 
     background: linear-gradient(
         145deg,
-        #8a7d1e,
-        #b5a52f
+        #947214,
+        #9c7b27d8
     );
 
     color: white;
 
-    padding: 55px 45px;
+    padding: 32px;
 
     display: flex;
     flex-direction: column;
@@ -141,8 +194,8 @@ body {
 
 .student-icon {
 
-    width: 65px;
-    height: 65px;
+    width: 54px;
+    height: 54px;
 
     display: flex;
     align-items: center;
@@ -152,11 +205,11 @@ body {
 
     border: 1px solid rgba(255, 255, 255, 0.25);
 
-    border-radius: 18px;
+    border-radius: 14px;
 
-    font-size: 30px;
+    font-size: 25px;
 
-    margin-bottom: 25px;
+    margin-bottom: 16px;
 
     backdrop-filter: blur(8px);
 
@@ -174,13 +227,13 @@ body {
 
 .student-intro h1 {
 
-    font-size: 2.6rem;
+    font-size: 2.1rem;
 
     line-height: 1.15;
 
-    letter-spacing: -1px;
+    letter-spacing: 0;
 
-    margin-bottom: 18px;
+    margin-bottom: 12px;
 
     max-width: 350px;
 
@@ -197,9 +250,9 @@ body {
 
     color: rgba(255, 255, 255, 0.88);
 
-    line-height: 1.7;
+    line-height: 1.55;
 
-    font-size: 1.05rem;
+    font-size: 0.95rem;
 
     max-width: 400px;
 
@@ -214,13 +267,13 @@ body {
 
 .benefits {
 
-    margin-top: 30px;
+    margin-top: 20px;
 
     display: flex;
 
     flex-direction: column;
 
-    gap: 12px;
+    gap: 8px;
 
     position: relative;
     z-index: 1;
@@ -237,15 +290,15 @@ body {
 
     align-items: center;
 
-    gap: 12px;
+    gap: 10px;
 
-    padding: 12px 14px;
+    padding: 8px 10px;
 
     background: rgba(255, 255, 255, 0.10);
 
     border: 1px solid rgba(255, 255, 255, 0.12);
 
-    border-radius: 12px;
+    border-radius: 8px;
 
     backdrop-filter: blur(6px);
 
@@ -267,8 +320,8 @@ body {
 
 .benefit span {
 
-    width: 27px;
-    height: 27px;
+    width: 23px;
+    height: 23px;
 
     flex-shrink: 0;
 
@@ -291,7 +344,7 @@ body {
 
     color: white;
 
-    font-size: 0.95rem;
+    font-size: 0.88rem;
 }
 
 
@@ -301,7 +354,7 @@ body {
 
 .student-form {
 
-    padding: 55px 50px;
+    padding: 32px;
 
     display: flex;
 
@@ -319,7 +372,7 @@ body {
 
 .student-form h2 {
 
-    font-size: 2rem;
+    font-size: 1.65rem;
 
     font-weight: 700;
 
@@ -341,7 +394,7 @@ body {
 
     font-size: 0.95rem;
 
-    margin-bottom: 30px;
+    margin-bottom: 18px;
 }
 
 
@@ -355,7 +408,7 @@ body {
 
     flex-direction: column;
 
-    gap: 20px;
+    gap: 14px;
 }
 
 
@@ -369,7 +422,7 @@ body {
 
     flex-direction: column;
 
-    gap: 8px;
+    gap: 6px;
 }
 
 
@@ -381,7 +434,7 @@ body {
 
     font-weight: 600;
 
-    font-size: 0.95rem;
+    font-size: 0.9rem;
 
     color: #1e293b;
 }
@@ -396,9 +449,9 @@ body {
 
     width: 100%;
 
-    padding: 13px 16px;
+    padding: 10px 12px;
 
-    font-size: 1rem;
+    font-size: 0.95rem;
 
     font-family: inherit;
 
@@ -446,7 +499,7 @@ body {
 
     width: 100%;
 
-    padding: 14px 24px;
+    padding: 11px 20px;
 
     border: none;
 
@@ -493,13 +546,13 @@ body {
 
     .student-intro {
 
-        padding: 45px 35px;
+        padding: 28px 32px;
 
     }
 
     .student-form {
 
-        padding: 45px 35px;
+        padding: 28px 32px;
 
     }
 
@@ -514,7 +567,7 @@ body {
 
     .student-page {
 
-        padding: 20px 12px;
+        padding: 82px 12px 20px;
 
     }
 
@@ -526,13 +579,13 @@ body {
 
     .student-intro {
 
-        padding: 40px 25px;
+        padding: 26px 22px;
 
     }
 
     .student-intro h1 {
 
-        font-size: 2rem;
+        font-size: 1.8rem;
 
     }
 
@@ -544,13 +597,13 @@ body {
 
     .student-form {
 
-        padding: 40px 25px;
+        padding: 26px 22px;
 
     }
 
     .student-form h2 {
 
-        font-size: 1.7rem;
+        font-size: 1.5rem;
 
     }
 

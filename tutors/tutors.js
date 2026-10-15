@@ -20,8 +20,6 @@ document.addEventListener('DOMContentLoaded', () => {
     secondForm.style.display = "block";
   });
 });
-
-
 async function loadRegistrations() {
   const showcase = document.getElementById('registrations-list');
   if (!showcase) return;

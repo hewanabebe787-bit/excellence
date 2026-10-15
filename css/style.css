@@ -44,7 +44,7 @@ section {
 }
 section.about {
   padding: 80px 20px;
-  max-width: 12000px;
+  max-width: 2000px;
   margin: 0 auto;
 }
 section h2 {
@@ -55,12 +55,12 @@ section h2 {
 }
 
 /* 2. BUTTONS & UI COMPONENTS */
-.btn-primary, .btn-secondary, .btn-tertiary {
+.btn-primary {
   display: inline-block;
-  padding: 12px 24px;
-  font-size: 1rem;
-  font-weight: 600;
-  border-radius: 8px;
+  padding: 7px 10px;
+  /* font-size:12px; */
+  font-weight: 150;
+  border-radius: 10px;
   transition: all 0.3s ease;
   border: none;
   cursor: pointer;
@@ -69,11 +69,11 @@ section h2 {
 .admin-btn {
   
   display: inline-block;
-  padding: 12px 24px;
+  padding: 7px 10px;
   
-  font-size: 1rem;
-  font-weight: 600;
-  border-radius: 8px;
+  /* font-size: 1rem; */
+  font-weight: 300;
+  border-radius: 10px;
   transition: all 0.3s ease;
   border: none;
   cursor: pointer;
@@ -91,15 +91,6 @@ section h2 {
   box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
 }
 
-.btn-secondary {
-  background-color: #0d9488;
-  color: #ffffff;
-}
-
-.btn-secondary:hover {
-  background-color: #0f766e;
-  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
-}
 
 .badge {
   display: inline-block;
@@ -114,30 +105,39 @@ section h2 {
 
 /* 3. NAVIGATION HEADER */
 #image { 
-  width: 65px;
-  height: 60px;
+  width: 45px;
+  height: 45px;
   border-radius: 50%;
- padding: 1px;
+ padding: 0px;
+ margin-right: 0px;
   border: 2px solid #e7d236; 
 }
-
 .navbar {
   display: flex;
-  position: sticky;
+  justify-content: space-between;
+
   top: 0;
-  z-index: 1000;
   background-color: rgba(255, 255, 255, 0.7);
+  border-radius:60px 60px 60px 60px ;
   border-bottom: 1px solid #e2e8f0;
   box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
-  padding: 0px 0px;
-  margin: 5px;
-  height: 70px;
-  border-radius:60px 60px 60px 60px ;
+  gap: 350px;
+  padding: 0px 0px 0px 30px;
+  margin: 5px 55px 2px 55px;
+  height: 45px;
+ 
+}
+#navbar {
+  display: flex;
+  justify-content: space-between;
+ position: sticky;
+  top: 0;
   
+  z-index: 1000;
 }
 
 .navbar nav {
-  max-width: 1200px;
+  max-width: 1000px;
   margin: 0 auto;
   display: flex;
   justify-content: space-between;
@@ -266,7 +266,7 @@ section h2 {
 }
 
 .about-text h2 {
-    font-size: 70px;
+    font-size: 50px;
     margin-bottom: 20px;
 }
 
@@ -274,11 +274,12 @@ section h2 {
 .about-text p {
     line-height: 1.7;
     margin-bottom: 15px;
-    font-size: 18px;
+    font-size: 14px;
 }
 
 .about-image {
     flex: 1;
+    width: 200px;
 }
 
  .about {
@@ -286,20 +287,23 @@ section h2 {
     flex-direction: row-reverse;
     align-items: center;
     justify-content: space-between;
-    gap: 50px;
+    gap: 0px;
      padding: 80px 5px 80px 5px;
 }
 
 .about-image img {
     /* width: 100%; */
-    min-width: 600px;
-    height: 600px;
+    min-width: 450px;
+    height: 450px;
     object-fit: cover;
     border-radius: 15px;
 }
 
 /* 5. SERVICES SECTION */
-  .services{
+  #services {
+    padding: 80px 20px;
+    max-width: 1200px;
+    margin: 0 auto;
 height: 100%;
    }
 .services-grid {
@@ -570,11 +574,14 @@ height: 100%;
 }
 
 .footer-logo {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  /* gap: 12px; */
   width: 80px;
   height: 80px;
   border-radius: 50%;
 }
-
 
 
 .footer-logo h3 {
@@ -614,14 +621,31 @@ height: 100%;
 .footer-column ul li a:hover {
   text-decoration: underline;
 }
-
 .footer-bottom {
-  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 24px;
   border-top: 1px solid #444;
-  padding-top: 50px;
+  padding-top: 16px;
   font-size: 14px;
 }
 
+.footer-bottom .social-icons,
+.footer-bottom p {
+  margin: 0;
+}
+.footer-bottom p {
+  margin: 0;
+  color: #fff;
+margin-left: 600px;
+}
+.social-icons {
+  margin-top: 10px;
+  /* height: 10px; 
+  width: 10px; */
+  margin-right: 900px;
+}
 /* 
    9. MEDIA QUERIES (RESPONSIVE LAYOUT) */
 @media (max-width: 768px) {

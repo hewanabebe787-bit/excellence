@@ -3,14 +3,67 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+  <link rel="icon" href="\asset/favicon.ico" sizes="any">
+    <link rel="apple-touch-icon" sizes="180x180" href="\asset/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="\asset/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="\asset/favicon-16x16.png">
+    <link rel="manifest" href="\asset/site.webmanifest">
     <title>tutors page</title>
     <link rel="stylesheet" href="tutors.css">
+    <link rel="stylesheet" href="../css/components.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.0/css/all.min.css">
+    <script src="../js/shared-components.js" defer></script>
     <script src="tutors.js" defer></script>
 </head>
 <body>
-  <section class="contact-section" id="contact">
+  
+  <header id="navbar" class="navbar">
+   
+  </header>
+ <form>
+  <section id="design" class="contact-section"  >
+    <!-- LEFT SIDE -->
+    <section class="tutor-intro" >
+  
+        <div class="tutor-icon">
+            🎓
+        </div>
+
+        <h1>Find the Family you are about to become part of</h1>
+  
+        <p class="form-description">
+          Be part of the community where knowledge flows and where you can grow your skills and be part of the family. We are here to help you find a job that matches your skills and experience. 
+        </p>
+  
+        <div class="benefits">
+  
+            <div class="benefit">
+                <span>✓</span>
+                <p>Job matching based on your skills and experience</p>
+            </div>
+  
+            <div class="benefit">
+                <span>✓</span>
+                <p>Loving family environment</p>
+            </div>
+  
+            <div class="benefit">
+                <span>✓</span>
+                <p>Flexible tutoring options</p>
+            </div>
+  
+            <div class="benefit">
+                <span>✓</span>
+                <p>Financial stability</p>
+            </div>
+  
+        </div>
+  
+    </section>
+ <!-- right side -->
+   <section class="tutor-form">
     <h2>Create Account</h2>
-    <form id="booking-form" class="form-container">
       <div class="form-group">
         <label for="student-name">Full Name</label>
         <input type="text" id="student-name" name="studentName" required placeholder="John Doe">
@@ -33,17 +86,15 @@
 
       <div class="form-group">
         <label for="message">Additional Notes</label>
-        <textarea id="message" name="message" rows="4" placeholder="Tell us about your learning goals..."></textarea>
+        <textarea id="message" name="message" rows="4" placeholder="Tell us of what you..."></textarea>
       </div>
 
       <button type="button" id="nextBtn" class="btn-primary">Next</button>
-    </form>
+    
   </section>
-  <!-- <section class="showcase-section">
-    <h2>Registrations</h2>
-    <div id="registrations-list" class="showcase-grid"></div>
-  </section> -->
-</body> 
+  </section>
+
+</form>
 
 <!-- second slide -->
 <form id="secondForm" class="education-form">
@@ -105,7 +156,6 @@
 
   </div>
  
-     
 <!-- Third Page -->
 <section id="thirdPage" class="application-page">
 
@@ -128,7 +178,7 @@
 
       <label class="choice-card">
         <input type="radio" name="experience" value="no" id="experienceNo">
-        <span>No</span>
+        <span>No</span> c
       </label>
 
     </div>
@@ -154,8 +204,7 @@
     <input
       type="file"
       id="cv"
-      accept=".pdf,.doc,.docx"
-    >
+      accept=".pdf,.doc,.docx" >
 
     <small>Accepted formats: PDF, DOC, DOCX</small>
   </div>
@@ -180,7 +229,6 @@
 
 </section>
 
-
 <!-- Pending Page -->
 <section id="pendingPage" class="pending-page">
 
@@ -203,9 +251,10 @@
 
 </section>
 
-
-
-
   </form>
-</form>
+
+  <div id="footer"></div>
+</body> 
+<!-- </form> -->
 </html>
+

@@ -1,32 +1,23 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>  
+<head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Excellence Tutor</title>
   <meta name="description" content="Connect with expert tutors in STEM, Languages, and Humanities.">
+  <title>Excellence Tutor</title>
+  <link rel="icon" href="asset/favicon.ico" sizes="any">
+  <link rel="icon" type="image/png" sizes="32x32" href="asset/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="asset/favicon-16x16.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="asset/apple-touch-icon.png">
+  <link rel="manifest" href="asset/site.webmanifest">
   <link rel="stylesheet" href="css/style.css">
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
-    <title>Excellence</title>
+  <link rel="stylesheet" href="css/components.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.0/css/all.min.css">
 </head>
 <body> 
 
-  <header class="navbar">
-    <div class="logo">
-     <img id="image" src="asset/logoex.jpg" alt="excellence tutor">
-    </div>
-    <nav>
-      <ul class="nav-links">
-        <li><a href="#about">About Us</a></li>
-        <li><a href="#services">Services</a></li>
-        <li><a href="student/student.html">Request a Tutor</a></li>
-        <li><a href="tutors/tutors.html">Find a job</a></li>
-        <li><a href="#contact" class="btn-primary">Register</a></li>
-        <li><a href="admin/admin.html" class="admin-btn">Admin</a></li>
-      </ul>
-    </nav>
+  <header id="navbar" class="navbar">
+    <!-- Navbar content will be loaded here via JavaScript -->
   </header>
 
  <div class="hero background">
@@ -129,78 +120,11 @@
       </div>
     </section>
    
- 
-
-   
   </main>
   
-    <footer class="footer">
-      <div class="footer-container">
-        <!-- Left: Logo + Title -->
-        <div class="footer-logo">
-          <img id="image" src="asset/logoex.jpg" alt="Excellence Tutor Logo">
-          <h3>Excellence Tutor</h3>
-          <div class="social-icons">
-            <a href="#"><i class="fab fa-twitter"></i></a>
-            <a href="#"><i class="fab fa-linkedin"></i></a>
-            <a href="#"><i class="fab fa-facebook"></i></a>
-            <a href="#"><i class="fas fa-link"></i></a>
-          </div>
-        </div>
-    
-        <!-- Middle: Quick Links -->
-        <div class="footer-column">
-          <h4>Quick Links</h4>
-          <ul>
-            <li><a href="#">Courses</a></li>
-            <li><a href="#">Tutoring Services</a></li>
-            <li><a href="#">News & Updates</a></li>
-          </ul>
-        </div>
-    
-        <!-- Middle: Resources -->
-        <div class="footer-column">
-          <h4>Resources</h4>
-          <ul>
-            <li><a href="#">Study Materials</a></li>
-            <li><a href="#">Exam Prep</a></li>
-            <li><a href="#">Cheat Sheets</a></li>
-            <li><a href="#">Application Portal</a></li>
-          </ul>
-        </div>
-    
-        <!-- Right: Contact -->
-        <div class="footer-column">
-          <h4>Contact</h4>
-          <ul>
-            <li><a href="#">Main Office</a></li>
-            <li><a href="#">Regional Offices</a></li>
-          </ul>
-        </div>
-      </div>
-    
-      <!-- Bottom -->
-      <div class="footer-bottom">
-        <p>© 2026 Excellence Tutor. All rights reserved.</p>
-      </div>
-    </footer>
-    
-</footer>
+  <div id="footer"></div>
 
-<style>
-.custom-footer {
-  background: #0a1a3a; /* dark blue background */
-  background: linear-gradient(to top, #0a1a3a 80%, #1f3a70 100%); /* subtle gradient */
-  color: #ffffff; /* white text */
-  text-align: center; /* center the text */
-  padding: 20px 0; /* spacing top and bottom */
-  font-family: Arial, sans-serif;
-  font-size: 14px;
-}
-</style>
-
-  </footer>
-
+  <script src="js/shared-components.js"></script>
   <script src="js/main.js"></script>
 </body>
 </html>
