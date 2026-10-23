@@ -1,0 +1,5 @@
+ALTER TABLE student_profiles
+  ADD COLUMN IF NOT EXISTS phone_number VARCHAR(30),
+  ADD COLUMN IF NOT EXISTS education_level VARCHAR(80),
+  ADD COLUMN IF NOT EXISTS school_name VARCHAR(160),
+  ADD COLUMN IF NOT EXISTS learning_goals TEXT;

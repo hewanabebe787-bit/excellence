@@ -1,15 +1,50 @@
+
+require('dotenv').config();
 const express = require('express');
 const cors = require('cors');
-const { promisify } = require('node:util');
-const { randomBytes, scrypt } = require('node:crypto');
-require('dotenv').config();
-
+const { validateRegistration, validateLogin } = require('./validators/auth.validator');
+const { registerUser, loginUser, getCurrentUser } = require('./controllers/auth.controller');
+const session = require('express-session');
+const PgSession = require('connect-pg-simple')(session);
 const app = express();
 const db = require('./db');
-const scryptAsync = promisify(scrypt);
+const validateStudentProfile = require('./validators/profile.validator');
+const validateTutorProfile = require('./validators/tutor-profile.validator');
+const requireTutor = require('./middleware/require-tutor');
+const { uploadTutorDocuments: tutorUploadMiddleware } = require('./middleware/tutor-upload');
+const {
+  getTutorProfile,
+  updateTutorProfile
+} = require('./controllers/tutor.controller');
+const {
+  uploadTutorDocuments
+} = require('./controllers/tutor-documents.controller');
+const {
+  getStudentProfile,
+  updateStudentProfile
+} = require('./controllers/student.controller');
 
 app.use(cors());
 app.use(express.json({ limit: '1mb' }));
+if (!process.env.SESSION_SECRET) {
+  throw new Error('Missing SESSION_SECRET setting.');
+}
+
+app.use(session({
+  store: new PgSession({
+    pool: db,
+    createTableIfMissing: true
+  }),
+  secret: process.env.SESSION_SECRET,
+  resave: false,
+  saveUninitialized: false,
+  cookie: {
+    httpOnly: true,
+    sameSite: 'lax',
+    secure: process.env.NODE_ENV === 'production',
+    maxAge: 24 * 60 * 60 * 1000
+  }
+}));
 app.use(express.static(__dirname));
 
 app.get('/api/health', async (req, res) => {
@@ -22,68 +57,29 @@ app.get('/api/health', async (req, res) => {
   }
 });
 
-app.post('/api/auth/register', validateRegistration, async (req, res) => {
-  const { fullName, email, password, role, subject, details, feeMin, feeMax } = req.registrationData;
+app.post('/api/auth/register', validateRegistration, registerUser);
 
-  const salt = randomBytes(16).toString('hex');
-  const hash = (await scryptAsync(password, salt, 64)).toString('hex');
-  let client;
+app.post('/api/auth/login', validateLogin, loginUser);
 
-  try {
-    client = await db.connect();
-    await client.query('BEGIN');
+app.get('/api/auth/me', getCurrentUser);
 
-    const result = await client.query(
-      `INSERT INTO users (full_name, email, password_hash, role)
-       VALUES ($1, $2, $3, $4)
-       RETURNING id, full_name, email, role, created_at`,
-      [fullName, email, `${salt}:${hash}`, role]
-    );
-    const user = result.rows[0];
+app.get('/api/student/profile', getStudentProfile);
 
-    if (role === 'student') {
-      await client.query(
-        'INSERT INTO student_profiles (user_id) VALUES ($1)',
-        [user.id]
-      );
-      if (subject) {
-        await client.query(
-          `INSERT INTO tutor_requests (student_id, subject, details, fee_min, fee_max)
-           VALUES ($1, $2, $3, $4, $5)`,
-          [user.id, subject, details || null, feeMin, feeMax]
-        );
-      }
-      
-    } else {
-      await client.query(
-        'INSERT INTO tutor_profiles (user_id) VALUES ($1)',
-        [user.id]
-      );
-    }
+app.put('/api/student/profile', validateStudentProfile, updateStudentProfile);
 
-    await client.query('COMMIT');
-    res.status(201).json({ user });
-  } catch (error) {
-    if (client) {
-      try {
-        await client.query('ROLLBACK');
-      } catch (rollbackError) {
-        console.error('Registration rollback failed:', rollbackError);
-      }
-    }
+app.get('/api/tutor/profile', getTutorProfile);
 
-    if (error.code === '23505') {
-      return res.status(409).json({ error: 'An account with this email already exists.' });
-    }
+app.put('/api/tutor/profile', validateTutorProfile, updateTutorProfile);
 
-    console.error('Account registration failed:', error);
-    res.status(500).json({ error: 'Could not create the account.' });
-  } finally {
-    if (client) client.release();
-  }
-});
+app.post(
+  '/api/tutor/documents',
+  requireTutor,
+  tutorUploadMiddleware,
+  uploadTutorDocuments
+);
 
 async function startServer() {
+  
   await db.query('SELECT 1');
   const port = process.env.PORT || 3000;
   app.listen(port, () => {

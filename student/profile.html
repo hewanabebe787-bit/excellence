@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -5,12 +6,55 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Student profile page</title>
     <link rel="stylesheet" href="../css/components.css">
+    <link rel="stylesheet" href="student.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.0/css/all.min.css">
     <script src="../js/shared-components.js" defer></script>
 </head>
+
 <body>
+
     <header id="navbar" class="navbar"></header>
-    <h1>Your Profile page</h1>
+
+    <main class="student-page">
+        <div class="student-card">
+            <section class="student-intro">
+                <h1>Your Student Profile</h1>
+                <p>Review and update your contact and learning information.</p>
+            </section>
+    
+            <section class="student-form">
+                <h2>Profile details</h2>
+    
+                <form id="profile-form" method="post">
+                    <div class="form-group">
+                        <label for="profile-phone">Phone number</label>
+                        <input id="profile-phone" name="phoneNumber" type="tel" maxlength="30">
+                    </div>
+    
+                    <div class="form-group">
+                        <label for="profile-education">Education level</label>
+                        <input id="profile-education" name="educationLevel" type="text" maxlength="80">
+                    </div>
+    
+                    <div class="form-group">
+                        <label for="profile-school">School name</label>
+                        <input id="profile-school" name="schoolName" type="text" maxlength="160">
+                    </div>
+    
+                    <div class="form-group">
+                        <label for="profile-goals">Learning goals</label>
+                        <textarea id="profile-goals" name="learningGoals" rows="5" maxlength="5000"></textarea>
+                    </div>
+    
+                    <p id="profile-error" role="alert"></p>
+                    <p id="profile-status" role="status" aria-live="polite"></p>
+    
+                    <button type="submit" class="btn-primary">Save profile</button>
+                </form>
+            </section>
+        </div>
+    </main>
     <div id="footer"></div>
+    <script src="profile.js" defer></script>
 </body>
 </html>

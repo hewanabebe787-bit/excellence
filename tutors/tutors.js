@@ -1,68 +1,74 @@
 document.addEventListener('DOMContentLoaded', () => {
-  loadRegistrations();
 
-  const nextBtn = document.getElementById("nextBtn");
-  const forms = document.querySelectorAll("form");
+  const nextBtn = document.getElementById('nextBtn');
+  const forms = document.querySelectorAll('form');
   const firstForm = forms[0];
   const secondForm = forms[1];
-  nextBtn.addEventListener("click", function () {
+  const applicationNextBtn = document.getElementById('applicationNextBtn');
+  const thirdPage = document.getElementById('thirdPage');
 
-    // Check if the first form is filled correctly
+  nextBtn.addEventListener('click', async () => {
     if (!firstForm.checkValidity()) {
       firstForm.reportValidity();
       return;
     }
 
-    // Hide the first page
-    firstForm.parentElement.style.display = "none";
+    nextBtn.disabled = true;
 
-    // Show the second page
-    secondForm.style.display = "block";
+    try {
+      const response = await fetch('/api/auth/register', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          fullName: document.getElementById('student-name').value.trim(),
+          email: document.getElementById('tutor-email').value.trim(),
+          password: document.getElementById('tutor-password').value,
+          role: 'tutor'
+        })
+      });
+
+      const result = await response.json();
+
+      if (!response.ok) {
+        throw new Error(result.error || 'Could not create your tutor account.');
+      }
+      const loginResponse = await fetch('/api/auth/login', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          email: document.getElementById('tutor-email').value.trim(),
+          password: document.getElementById('tutor-password').value,
+          role: 'tutor'
+        })
+      });
+      
+      const loginResult = await loginResponse.json();
+      
+      if (!loginResponse.ok) {
+        throw new Error(
+          `Account created, but sign-in failed: ${
+            loginResult.error || 'Please sign in before continuing.'
+          }`
+        );
+      }
+      firstForm.style.display = 'none';
+      secondForm.style.display = 'block';
+    } catch (error) {
+      alert(error instanceof Error ? error.message : 'Could not create your tutor account.');
+    } finally {
+      nextBtn.disabled = false;
+    }
+  });
+
+  applicationNextBtn.addEventListener('click', () => {
+    secondForm.querySelector('h2').style.display = 'none';
+    secondForm.querySelector('.education-subtitle').style.display = 'none';
+    secondForm.querySelector('.education-options').style.display = 'none';
+    applicationNextBtn.style.display = 'none';
+    thirdPage.style.display = 'block';
   });
 });
-async function loadRegistrations() {
-  const showcase = document.getElementById('registrations-list');
-  if (!showcase) return;
 
-  try {
-    const response = await fetch('http://localhost:3000/registrations');
-    const data = await response.json();
-
-    if (!Array.isArray(data) || data.length === 0) {
-      showcase.innerHTML = '<p>No registrations yet.</p>';
-      return;
-    }
-
-    const recentFirst = data
-      .slice()
-      .sort((a, b) => new Date(b.submittedAt) - new Date(a.submittedAt));
-
-    showcase.innerHTML = recentFirst
-      .map(
-        (entry) => `
-          <article class="registration-card">
-            <div class="meta">
-              <span>${new Date(entry.submittedAt).toLocaleDateString()}</span>
-              <span>${entry.studentEmail || 'Not provided'}</span>
-            </div>
-
-            <h3>${entry.studentName || 'Anonymous Student'}</h3>
-
-            <p>${entry.message || 'No notes provided.'}</p>
-
-            <span class="subject-tag">
-              ${entry.subject || 'General'}
-            </span>
-          </article>
-        `
-      )
-      .join('');
-
-  } catch (error) {
-    console.error('Could not load registrations:', error);
-    showcase.innerHTML = '<p>Could not load registrations.</p>';
-  }
-}
 // THIRD PAGE
 
 const experienceYes = document.getElementById("experienceYes");
@@ -82,33 +88,43 @@ const finishBtn = document.getElementById("finishBtn");
 const thirdPage = document.getElementById("thirdPage");
 const pendingPage = document.getElementById("pendingPage");
 
-finishBtn.addEventListener("click", function () {
-
-  // Make sure experience is selected
+finishBtn.addEventListener("click", async function () {
   if (!experienceYes.checked && !experienceNo.checked) {
     alert("Please tell us whether you have teaching experience.");
     return;
   }
 
-  // Make sure CV is uploaded
   const cv = document.getElementById("cv");
-
-  if (cv.files.length === 0) {
-    alert("Please upload your CV.");
-    return;
-  }
-
-  // Make sure Fayda is uploaded
   const fayda = document.getElementById("fayda");
 
-  if (fayda.files.length === 0) {
-    alert("Please upload your Fayda.");
+  if (cv.files.length === 0 || fayda.files.length === 0) {
+    alert("Please upload both your CV and Fayda.");
     return;
   }
 
-  // Hide application page
-  thirdPage.style.display = "none";
+  const formData = new FormData();
+  formData.append("cv", cv.files[0]);
+  formData.append("fayda", fayda.files[0]);
 
-  // Show pending page
-  pendingPage.style.display = "block";
+  finishBtn.disabled = true;
+
+  try {
+    const response = await fetch("/api/tutor/documents", {
+      method: "POST",
+      body: formData
+    });
+
+    const result = await response.json();
+
+    if (!response.ok) {
+      throw new Error(result.error || "Could not upload your documents.");
+    }
+
+    thirdPage.style.display = "none";
+    pendingPage.style.display = "block";
+  } catch (error) {
+    alert(error instanceof Error ? error.message : "Could not upload your documents.");
+  } finally {
+    finishBtn.disabled = false;
+  }
 });

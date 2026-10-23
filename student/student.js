@@ -2,7 +2,6 @@
 
 document.addEventListener('DOMContentLoaded', () => {
     initBookingForm();
-    loadRegistrations();
   });
 
 // === BOOKING FORM ===
@@ -23,30 +22,36 @@ function initBookingForm() {
       return;
     }
 
-    const formData = {
-      studentName,
-      studentEmail,
+    const payload = {
+      fullName: studentName,
+      email: studentEmail,
+      password: document.getElementById('student-password').value,
+      role: 'student',
       subject,
-      message,
-      submittedAt: new Date().toISOString()
+      details: message,
+      feeMin: document.getElementById('fee-min').value || null,
+      feeMax: document.getElementById('fee-max').value || null
     };
 
     try {
-      const response = await fetch('http://localhost:3000/registrations', {
+      const response = await fetch('/api/auth/register', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify(formData)
+        body: JSON.stringify(payload)
       });
 
-      if (!response.ok) throw new Error('Save failed');
+      const result = await response.json();
+      if (!response.ok) {
+        throw new Error(result.error || 'Registration failed.');
+      }
 
-      alert('Registration saved successfully!');
+      alert('Your account and tutor request have been submitted successfully.');
       bookingForm.reset();
-      loadRegistrations();
     } catch (error) {
-      console.error('Save error:', error);
-      alert('There was a problem saving your registration.');
+      console.error('Registration error:', error);
+      alert(error.message || 'There was a problem creating your account.');
     }
-  });
-}
+});
+  }
+
 

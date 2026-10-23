@@ -1,0 +1,7 @@
+ALTER TABLE tutor_profiles
+  ADD COLUMN IF NOT EXISTS phone_number VARCHAR(30),
+  ADD COLUMN IF NOT EXISTS education_level VARCHAR(80),
+  ADD COLUMN IF NOT EXISTS subjects TEXT[] NOT NULL DEFAULT '{}',
+  ADD COLUMN IF NOT EXISTS experience_details TEXT,
+  ADD COLUMN IF NOT EXISTS availability TEXT,
+  ADD COLUMN IF NOT EXISTS hourly_rate NUMERIC(10, 2);

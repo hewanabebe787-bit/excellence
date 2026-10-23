@@ -73,7 +73,18 @@
         <label for="tutor-email">Email Address</label>
         <input type="email" id="tutor-email" name="tutorEmail" required placeholder="john@example.com">
       </div>
-
+      <div class="form-group">
+        <label for="tutor-password">Password</label>
+        <input
+          type="password"
+          id="tutor-password"
+          name="password"
+          minlength="8"
+          maxlength="128"
+          autocomplete="new-password"
+          required
+        >
+      </div>
       <div class="form-group">
         <label for="tutor-phone">phone number</label>
         <input type="number" id="tutor-phone" name="tutorPhone" required placeholder="0912345678">
@@ -155,7 +166,10 @@
     </div>
 
   </div>
- 
+
+  <button type="button" id="applicationNextBtn" class="btn-primary">
+    Continue
+  </button>
 <!-- Third Page -->
 <section id="thirdPage" class="application-page">
 
@@ -178,7 +192,7 @@
 
       <label class="choice-card">
         <input type="radio" name="experience" value="no" id="experienceNo">
-        <span>No</span> c
+        <span>No</span> 
       </label>
 
     </div>

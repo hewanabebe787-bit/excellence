@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tutor Dashboard | Excellence Tutor</title>
+  <link rel="stylesheet" href="../css/components.css">
+  <link rel="stylesheet" href="../student/student.css">
+  <script src="../js/shared-components.js" defer></script>
+  <script src="dashboard.js" defer></script>
+</head>
+<body>
+  <header id="navbar" class="navbar"></header>
+
+  <main class="student-page">
+    <div class="student-card">
+      <section class="student-intro">
+        <h1>Welcome, <span id="tutor-name">Tutor</span></h1>
+        <p>This is your tutor dashboard.</p>
+      </section>
+
+      <section class="student-form">
+        <h2>Your account</h2>
+        <p id="dashboard-status" role="status" aria-live="polite">
+          Checking your sign-in…
+        </p>
+
+        <div id="tutor-dashboard" hidden>
+          <p><strong>Email:</strong> <span id="tutor-email"></span></p>
+        
+          <h2>Edit your tutor profile</h2>
+          <p id="profile-error" role="alert"></p>
+          <p id="profile-status" role="status" aria-live="polite"></p>
+        
+          <form id="tutor-profile-form" class="form-container">
+            <div class="form-group">
+              <label for="tutor-phone">Phone number</label>
+              <input id="tutor-phone" type="tel" maxlength="30">
+            </div>
+        
+            <div class="form-group">
+              <label for="tutor-education">Education level</label>
+              <input id="tutor-education" type="text" maxlength="80">
+            </div>
+        
+            <div class="form-group">
+              <label for="tutor-subjects">Subjects you can teach</label>
+              <textarea id="tutor-subjects" rows="3"
+                placeholder="For example: Mathematics, Physics, English"></textarea>
+              <small>Separate subjects with commas.</small>
+            </div>
+        
+            <div class="form-group">
+              <label for="tutor-experience">Teaching experience</label>
+              <textarea id="tutor-experience" rows="4" maxlength="5000"></textarea>
+            </div>
+        
+            <div class="form-group">
+              <label for="tutor-availability">Availability</label>
+              <textarea id="tutor-availability" rows="3" maxlength="2000"
+                placeholder="Days and times you are available"></textarea>
+            </div>
+        
+            <div class="form-group">
+              <label for="tutor-rate">Hourly rate</label>
+              <input id="tutor-rate" type="number" min="0" step="0.01">
+            </div>
+        
+            <button type="submit" class="btn-primary">Save profile</button>
+          </form>
+        </div>
+      </section>
+    </div>
+  </main>
+
+  <div id="footer"></div>
+</body>
+</html>

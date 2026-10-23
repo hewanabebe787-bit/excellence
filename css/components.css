@@ -47,7 +47,61 @@
 .nav-links a:hover {
   color: #0d9488;
 }
+.nav-dropdown {
+  position: relative;
+}
 
+.nav-dropdown-toggle {
+  font: inherit;
+  padding: 8px 16px;
+  border: 1px solid #c7ad52;
+  border-radius: 999px;
+  background: linear-gradient(135deg, #8a7d1e, #6f5a13);
+  color: #fff;
+  font-weight: 600;
+  box-shadow: 0 4px 10px rgba(77, 61, 35, 0.2);
+}
+
+.nav-dropdown-toggle:hover,
+.nav-dropdown-toggle:focus-visible {
+  background: #4d3d23;
+  color: #fff;
+}
+
+.nav-dropdown-menu {
+  display: none;
+  position: absolute;
+  top: 100%;
+  right: 0;
+  z-index: 1001;
+  min-width: 190px;
+  margin: 0;
+  padding: 8px;
+  list-style: none;
+  background: #4d3d23;
+  border: 1px solid #c7ad52;
+  border-radius: 12px;
+  box-shadow: 0 10px 24px rgba(40, 30, 15, 0.28);
+}
+
+.nav-dropdown:hover .nav-dropdown-menu,
+.nav-dropdown:focus-within .nav-dropdown-menu {
+  display: block;
+}
+
+.nav-dropdown-menu a {
+  display: block;
+  padding: 10px 12px;
+  border-radius: 8px;
+  color: #fff;
+  white-space: nowrap;
+}
+
+.nav-dropdown-menu a:hover,
+.nav-dropdown-menu a:focus-visible {
+  background: #8a7d1e;
+  color: #fff;
+}
 .footer {
   background-color: #4d3d23;
   color: #ffffff;

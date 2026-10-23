@@ -26,6 +26,9 @@ body {
 
   color: #1e293b;
 }
+.application-page{
+  display: none;
+}
 
 /* 3. NAVIGATION HEADER */
 #image { 

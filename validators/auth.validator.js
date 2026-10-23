@@ -45,5 +45,25 @@ function validateRegistration(request, response, next) {
   
     next();
   }
+  function validateLogin(request, response, next) {
+    const body =
+      request.body && typeof request.body === 'object' && !Array.isArray(request.body)
+        ? request.body
+        : {};
   
-  module.exports = validateRegistration;
+    const email = typeof body.email === 'string' ? body.email.trim().toLowerCase() : '';
+    const password = typeof body.password === 'string' ? body.password : '';
+    const role = body.role;
+    if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email) || email.length > 254) {
+      return response.status(400).json({ error: 'Enter a valid email address.' });
+    }
+    if (password.length < 8 || password.length > 128) {
+      return response.status(400).json({ error: 'Password must be 8 to 128 characters.' });
+    }
+    if (!['student', 'tutor'].includes(role)) {
+      return response.status(400).json({ error: 'Choose student or tutor sign-in.' });
+    }
+    request.loginData = { email, password, role };
+    next();
+  }
+  module.exports = { validateRegistration, validateLogin };
