@@ -16,12 +16,16 @@ const {
   getTutorProfile,
   updateTutorProfile
 } = require('./controllers/tutor.controller');
+
+const validateStudentTutorRequest =require('./validators/student-request.validator');
 const {
   uploadTutorDocuments
 } = require('./controllers/tutor-documents.controller');
 const {
   getStudentProfile,
-  updateStudentProfile
+  updateStudentProfile,
+  getStudentTutorRequests,
+  createStudentTutorRequest
 } = require('./controllers/student.controller');
 
 app.use(cors());
@@ -70,6 +74,14 @@ app.put('/api/student/profile', validateStudentProfile, updateStudentProfile);
 app.get('/api/tutor/profile', getTutorProfile);
 
 app.put('/api/tutor/profile', validateTutorProfile, updateTutorProfile);
+
+app.get('/api/student/requests', getStudentTutorRequests);
+
+app.post(
+  '/api/student/requests',
+  validateStudentTutorRequest,
+  createStudentTutorRequest
+);
 
 app.post(
   '/api/tutor/documents',

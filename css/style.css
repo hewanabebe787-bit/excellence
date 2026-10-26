@@ -234,7 +234,7 @@ section h2 {
 .hero h1 {
   font-size: 3rem;
   font-weight: 800;
-  color: #98772a;
+  color: lab(51.88% 4.64 45.38);
   line-height: 1.2;
   margin-bottom: 20px;
 }

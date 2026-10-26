@@ -15,11 +15,31 @@
 
     <header id="navbar" class="navbar"></header>
 
-    <main class="student-page">
+    <main class="student-page student-profile-page">
         <div class="student-card">
             <section class="student-intro">
                 <h1>Your Student Profile</h1>
                 <p>Review and update your contact and learning information.</p>
+            </section>
+            
+            <section class="student-account" aria-label="Student account">
+                <div class="account-avatar" aria-hidden="true">
+                    <i class="fa-solid fa-user"></i>
+                </div>
+            
+                <div class="account-details">
+                    <p class="account-label">ACCOUNT OVERVIEW</p>
+                    <h2 id="account-name"></h2>
+                    <p class="account-email">
+                        <i class="fa-regular fa-envelope" aria-hidden="true"></i>
+                        <span id="account-email"></span>
+                    </p>
+                </div>
+            
+                <div class="account-role">
+                    <i class="fa-solid fa-graduation-cap" aria-hidden="true"></i>
+                    Student
+                </div>
             </section>
     
             <section class="student-form">
@@ -52,6 +72,54 @@
                     <button type="submit" class="btn-primary">Save profile</button>
                 </form>
             </section>
+            
+            <section class="student-requests">
+                <h2>Create a tutor request</h2>
+            
+                <form id="request-form">
+                    <div class="form-group">
+                        <label for="request-subject">Subject</label>
+                        <input
+                            id="request-subject"
+                            name="subject"
+                            type="text"
+                            maxlength="120"
+                            required
+                        >
+                    </div>
+            
+                    <div class="form-group">
+                        <label for="request-details">Additional notes</label>
+                        <textarea
+                            id="request-details"
+                            name="details"
+                            rows="4"
+                            maxlength="5000"
+                        ></textarea>
+                    </div>
+            
+                    <div class="form-group">
+                        <label for="request-fee-min">Minimum fee</label>
+                        <input id="request-fee-min" name="feeMin" type="number" min="0" step="0.01">
+                    </div>
+            
+                    <div class="form-group">
+                        <label for="request-fee-max">Maximum fee</label>
+                        <input id="request-fee-max" name="feeMax" type="number" min="0" step="0.01">
+                    </div>
+            
+                    <p id="request-error" role="alert"></p>
+                    <p id="request-status" role="status" aria-live="polite"></p>
+            
+                    <button type="submit" class="btn-primary">Submit tutor request</button>
+                </form>
+            </section>
+
+            <section class="student-requests">
+                <h2>My tutor requests</h2>
+                <div id="requests-list" aria-live="polite">Loading requests...</div>
+            </section>
+            
         </div>
     </main>
     <div id="footer"></div>

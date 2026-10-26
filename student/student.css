@@ -608,3 +608,214 @@ body {
     }
 
 }
+.student-profile-page {
+    min-height: calc(100vh - 60px);
+    align-items: flex-start;
+    padding: 40px 24px;
+    background:
+        radial-gradient(circle at top right, #eee6d2 0, transparent 32%),
+        #f7f5ef;
+}
+
+.student-profile-page .student-card {
+    max-width: 1100px;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    align-items: start;
+    gap: 20px;
+    overflow: visible;
+    background: transparent;
+    box-shadow: none;
+}
+
+.student-profile-page .student-intro {
+    grid-column: 1 / -1;
+    display: block;
+    padding: 30px 34px;
+    border: 1px solid #c7ad52;
+    border-radius: 20px;
+    background: linear-gradient(135deg, #4d3d23, #75652f);
+}
+
+.student-profile-page .student-intro h1 {
+    max-width: none;
+    margin-bottom: 8px;
+    font-size: 2rem;
+}
+
+.student-profile-page .student-intro > p {
+    max-width: none;
+}
+
+.student-profile-page .student-account,
+.student-profile-page .student-form,
+.student-profile-page .student-requests {
+    padding: 26px;
+    border: 1px solid #e7e0d2;
+    border-radius: 18px;
+    background: #fffefa;
+    box-shadow: 0 8px 24px rgba(77, 61, 35, 0.07);
+}
+
+.student-profile-page .student-account,
+.student-profile-page .student-card > .student-requests:last-of-type {
+    grid-column: 1 / -1;
+}
+
+.student-profile-page .student-account h2,
+.student-profile-page .student-form h2,
+.student-profile-page .student-requests h2 {
+    margin-bottom: 14px;
+    color: #4d3d23;
+}
+
+.student-profile-page .student-account p {
+    margin-top: 8px;
+    color: #5f584a;
+}
+
+.student-profile-page .student-form {
+    display: block;
+}
+
+.student-profile-page .form-group input:focus,
+.student-profile-page .form-group textarea:focus {
+    border-color: lab(51.88% 4.64 45.38);
+    box-shadow: 0 0 0 3px lab(51.88% 4.64 45.38 / 18%);
+}
+
+.student-profile-page .btn-primary {
+    background: lab(51.88% 4.64 45.38);
+}
+
+.student-profile-page .btn-primary:hover {
+    background: #6f5a13;
+}
+
+.student-profile-page #requests-list article {
+    margin-top: 12px;
+    padding: 16px;
+    border: 1px solid #e7e0d2;
+    border-radius: 12px;
+    background: #f8f6f0;
+}
+
+.student-profile-page #requests-list h3 {
+    margin-bottom: 6px;
+    color: #4d3d23;
+}
+
+.student-profile-page #requests-list p {
+    margin-top: 6px;
+    color: #5f584a;
+}
+
+@media (max-width: 700px) {
+    .student-profile-page {
+        padding: 24px 14px;
+    }
+
+    .student-profile-page .student-card {
+        grid-template-columns: 1fr;
+        gap: 14px;
+    }
+
+    .student-profile-page .student-intro,
+    .student-profile-page .student-account,
+    .student-profile-page .student-form,
+    .student-profile-page .student-requests {
+        grid-column: 1;
+        padding: 22px;
+    }
+}
+.student-profile-page .student-account {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    position: relative;
+    overflow: hidden;
+    background: linear-gradient(115deg, #fffefa, #f2ead6);
+}
+
+.student-profile-page .account-avatar {
+    width: 76px;
+    height: 76px;
+    flex: 0 0 76px;
+    display: grid;
+    place-items: center;
+    border: 1px solid rgba(77, 61, 35, 0.14);
+    border-radius: 22px;
+    background: lab(51.88% 4.64 45.38);
+    color: white;
+    font-size: 30px;
+    box-shadow: 0 8px 18px rgba(77, 61, 35, 0.18);
+}
+
+.student-profile-page .account-details {
+    min-width: 0;
+}
+
+.student-profile-page .account-label {
+    margin-bottom: 5px;
+    color: #746a18;
+    font-size: 0.75rem;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+}
+
+.student-profile-page .account-details h2 {
+    margin: 0 0 8px;
+    color: #4d3d23;
+    font-size: 1.5rem;
+}
+
+.student-profile-page .account-email {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin: 0;
+    color: #5f584a;
+    overflow-wrap: anywhere;
+}
+
+.student-profile-page .account-email i {
+    color: #746a18;
+}
+
+.student-profile-page .account-role {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    margin-left: auto;
+    padding: 9px 14px;
+    border: 1px solid #e7e0d2;
+    border-radius: 999px;
+    background: rgba(255, 255, 255, 0.75);
+    color: #4d3d23;
+    font-size: 0.9rem;
+    font-weight: 600;
+    white-space: nowrap;
+}
+
+.student-profile-page .account-role i {
+    color: #746a18;
+}
+
+@media (max-width: 500px) {
+    .student-profile-page .student-account {
+        align-items: flex-start;
+        flex-wrap: wrap;
+        gap: 14px;
+    }
+
+    .student-profile-page .account-avatar {
+        width: 60px;
+        height: 60px;
+        flex-basis: 60px;
+        border-radius: 18px;
+        font-size: 24px;
+    }
+
+    .student-profile-page .account-role {
+        margin-left: 74px;
+    }
+}
